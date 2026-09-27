@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tugas 3 - Layout Frameset HTML</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<frameset rows="120, 50, *, 40" border="2">
+    <frame src="header.html" name="f_header" scrolling="no">
+        <frame src="menu.html" name="f_menu" scrolling="no">
+            <frameset cols="22%, *, 22%">
+                <frame src="left.html" name="f_left">
+                    <frame src="home.html" name="f_main">
+                        <frame src="right.html" name="f_right">
+            </frameset>
+            <frame src="footer.html" name="f_footer" scrolling="no">
+</frameset>
+
+</html>
