@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tugas Pertemuan 4 - JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sistem Manajemen Transportasi</h1>
+
+    <script>
+        // 1. Membuat class Pelanggan
+        class Pelanggan {
+            constructor(nama, nomorTelepon) {
+                this.nama = nama;
+                this.nomorTelepon = nomorTelepon;
+                this.kendaraanDisewa = null;
+            }
+
+            // 2. Method untuk mencatat transaksi penyewaan kendaraan
+            sewaKendaraan(kendaraan) {
+                this.kendaraanDisewa = kendaraan;
+            }
+        }
+
+        // Membuat beberapa pelanggan menggunakan class Pelanggan
+        let pelanggan1 = new Pelanggan(
+            "Jelita Hartati N",
+            "081234567890"
+        );
+
+        let pelanggan2 = new Pelanggan(
+            "Riez Rafa Roro",
+            "089673746693"
+        );
+
+        // Mencatat kendaraan yang disewa oleh pelanggan
+        pelanggan1.sewaKendaraan("Toyota Avanza");
+        pelanggan2.sewaKendaraan("Honda Brio");
+
+
+        // 3. Menampilkan daftar pelanggan yang sedang menyewa kendaraan
+        document.write("<h2>Daftar Pelanggan yang Menyewa Kendaraan</h2>");
+
+        document.write("<table border='1' cellpadding='8' cellspacing='0'>");
+
+        document.write("<tr>");
+        document.write("<th>Nama</th>");
+        document.write("<th>Nomor Telepon</th>");
+        document.write("<th>Kendaraan yang Disewa</th>");
+        document.write("</tr>");
+
+        document.write("<tr>");
+        document.write("<td>" + pelanggan1.nama + "</td>");
+        document.write("<td>" + pelanggan1.nomorTelepon + "</td>");
+        document.write("<td>" + pelanggan1.kendaraanDisewa + "</td>");
+        document.write("</tr>");
+
+        document.write("<tr>");
+        document.write("<td>" + pelanggan2.nama + "</td>");
+        document.write("<td>" + pelanggan2.nomorTelepon + "</td>");
+        document.write("<td>" + pelanggan2.kendaraanDisewa + "</td>");
+        document.write("</tr>");
+
+        document.write("</table>");
+    </script>
+
+</body>
+
+</html>
