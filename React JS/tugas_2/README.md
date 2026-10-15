@@ -113,9 +113,9 @@ npm run lint
 
 - **Hasil Build**: Sukses 100% tanpa error (`built in ~0.66s`, output di folder `dist/`).
 - **Hasil Lint**: `0 warnings` dan `0 errors`.
-- **Laporan PDF Resmi**:
-  - Berkas PDF: [`docs/Laporan_Tugas_2_React_Router.pdf`](docs/Laporan_Tugas_2_React_Router.pdf)
-  - Salinan Root: [`Laporan_Tugas_2_React_Router.pdf`](Laporan_Tugas_2_React_Router.pdf)
+- **Laporan PDF Resmi (Format Standar Akademik 3 Halaman A4)**:
+  - Berkas PDF Utama: [`TUGAS PERTEMUAN 2.pdf`](TUGAS PERTEMUAN 2.pdf) (dan [`docs/TUGAS PERTEMUAN 2.pdf`](docs/TUGAS PERTEMUAN 2.pdf))
+  - Salinan Alternatif: [`Laporan_Tugas_2_React_Router.pdf`](Laporan_Tugas_2_React_Router.pdf)
 - **Tangkapan Layar Browser Asli**:
   - Halaman Home (Rute `/`) : [`docs/screenshots/home.png`](docs/screenshots/home.png)
   - Halaman Team (Rute `/team`) : [`docs/screenshots/team.png`](docs/screenshots/team.png)
