@@ -6,6 +6,11 @@ import Team from './pages/Team'
 import Contact from './pages/Contact'
 import './App.css'
 
+/**
+ * Component App.
+ * Component utama yang menampung komponen-komponen lain (Slide 32 dari materi).
+ * Mengelola state navigasi halaman (Single Page Application) dan rendering kondisional.
+ */
 function App() {
   const getInitialPage = () => {
     const hash = window.location.hash.replace('#', '').toLowerCase()
@@ -36,15 +41,18 @@ function App() {
   }
 
   return (
-    <div className="d-flex flex-column min-vh-100 bg-light">
+    <div className="d-flex flex-column min-vh-100">
+      {/* Component Header / Navbar */}
       <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
 
+      {/* Component Konten Utama */}
       <main className="flex-grow-1">
         {currentPage === 'home' && <Home onNavigate={handleNavigate} />}
         {currentPage === 'team' && <Team onNavigate={handleNavigate} />}
         {currentPage === 'contact' && <Contact onNavigate={handleNavigate} />}
       </main>
 
+      {/* Component Footer */}
       <Footer onNavigate={handleNavigate} />
     </div>
   )

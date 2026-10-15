@@ -1,6 +1,10 @@
-# Tugas 1 Pemrograman React JS — Home, Team, dan Contact
+# LUMINA Studio — Tugas 1 Pemrograman React JS
 
-Repositori pengerjaan Tugas 1 mata kuliah **Pemrograman React JS** (Program MSIB). Proyek ini mengimplementasikan aplikasi web berbasis komponen modular React 19 dengan integrasi framework Bootstrap 5.
+Aplikasi web modern berstandar agensi digital kreatif yang dibangun menggunakan **React 19**, **Vite 8**, dan **Bootstrap 5** dengan konsep estetika *Dark Glassmorphism*.
+
+Proyek ini disusun untuk memenuhi **Tugas 1** pada mata kuliah **Pemrograman React JS** (Program Studi Independen Bersertifikat / MSIB 2026).
+
+---
 
 ## Identitas Mahasiswa
 - **Nama Mahasiswa** : Riez Rafa Roro
@@ -8,65 +12,71 @@ Repositori pengerjaan Tugas 1 mata kuliah **Pemrograman React JS** (Program MSIB
 - **Perguruan Tinggi** : STT Terpadu Nurul Fikri
 - **Program** : Studi Independen Bersertifikat (MSIB)
 - **Mata Kuliah** : Pemrograman React JS
+- **Lokasi Folder Proyek** : `React JS/tugas_1` (Folder tunggal resmi)
 
 ---
 
-## Fitur dan Halaman Aplikasi
+## Konsep Desain & Tema Website
+Website ini mengusung tema **Lumina Creative & Technology Studio** — studio digital visioner yang merancang arsitektur web modern, antarmuka imersif, dan sistem cerdas:
+- **Dark Glassmorphism Aesthetic**: Latar belakang deep obsidian (`#090d16`) berpadu dengan aksen radiant gradient (Electric Violet `#8b5cf6`, Cyan `#06b6d4`, Indigo `#6366f1`, dan Rose `#ec4899`).
+- **Komponen Modular & Reusable Props**: Komponen `Navbar`, `Footer`, `FeatureCard`, dan `TeamCard` dirancang terpisah dan modular memanfaatkan alur props React.
+- **Tipografi & Micro-Interactions**: Menggunakan font modern *Plus Jakarta Sans*, kartu dengan efek hover lift & glow, dan tombol gradient bercahaya.
+
+---
+
+## Halaman Utama
 
 1. **Halaman Home (`#home`)**
-   - **Navbar Responsif**: Navigasi ke Home, Team, dan Contact dengan active indicator dan mobile collapse toggler.
-   - **Hero Section**: Heading modern, lead text penjelasan proyek, dua tombol Call to Action (CTA), dan ilustrasi vektor web development.
-   - **Fitur Unggulan**: Tiga kartu Bootstrap Grid (Komponen Modular, Desain Responsif, Performa Cepat) dengan icon badge.
-   - **Statistik & Footer**: Menampilkan tech stack (React 19, Vite, Bootstrap 5) dan identitas mahasiswa.
+   - **Navbar Glassmorphism**: Brand logo Lumina dengan badge studio, tautan navigasi responsif, dan CTA "Let's Collaborate".
+   - **Hero Section**: Judul inspiratif *"We Architect Digital Futures & Immersive Realities"*, deskripsi studio, CTA ganda, dan ilustrasi vektor SVG studio canvas kustom.
+   - **Core Capabilities (3 Feature Cards)**: Next-Gen Web Architecture, Immersive UI/UX & Glassmorphism, serta AI Workflows & Cloud Innovation.
+   - **Studio Live Metrics**: 120+ Product Launches, 99.8% CSAT, 42ms Render Speed, dan 18+ Design Awards.
+   - **Call To Action Banner**: Banner bercahaya dengan ajakan kolaborasi proyek.
 
 2. **Halaman Team (`#team`)**
-   - **Meet Our Team**: Header dan deskripsi peran tim pengembang perangkat lunak.
-   - **Bootstrap Grid & Card**: 4 kartu anggota tim dengan avatar ilustrasi SVG, nama, peran (Lead Dev, UI/UX, Frontend Specialist, QA), bio, tags keahlian, dan tombol profil GitHub.
-   - **Catatan Transparansi**: Alert informasi yang secara jujur menerangkan profil pertama merupakan identitas mahasiswa penanggung jawab tugas, sedangkan profil lainnya adalah data contoh (sample data) untuk simulasi peran tim.
+   - **The Visionaries**: Menampilkan profil 4 kreator studio menggunakan komponen `TeamCard` dan Bootstrap Grid (`row g-4`, `col-lg-3 col-md-6`).
+   - **Anggota Tim**:
+     1. **Riez Rafa Roro** — Founder & Head of Engineering (Mahasiswa Penanggung Jawab &bull; NIM: 0110224034)
+     2. **Elena Vance** — Principal Art Director & UI/UX (Motion & Glassmorphism Specialist)
+     3. **Marcus Chen** — Chief Technology Officer (Frontend & Performance Engineering)
+     4. **Nabila Safira** — Head of Product Strategy & Quality Assurance
+   - **Transparansi Akademik**: Alert informasi yang secara jujur menerangkan profil pertama merupakan mahasiswa penanggung jawab tugas, sementara profil lainnya adalah data percontohan (sample data) simulasi agensi profesional.
 
 3. **Halaman Contact (`#contact`)**
-   - **Informasi Kontak**: Alamat kampus STT Terpadu Nurul Fikri, email mahasiswa, nomor telepon contoh, dan jam layanan operasional.
-   - **Formulir Interaktif**: Form input Nama Lengkap, Alamat Email, Subjek Pesan (dropdown), dan Isi Pesan (textarea).
-   - **Validasi State React**: Validasi kelengkapan form secara dinamis (nama min. 3 karakter, regex email valid, pemilihan subjek, panjang pesan min. 10 karakter).
-   - **Feedback Simulasi**: Alert sukses Bootstrap berwarna hijau beserta ringkasan pesan terkirim dan timestamp pengiriman (disimulasikan pada frontend client-side tanpa backend server).
+   - **Studio Headquarters (Kiri)**: Alamat studio lab di STT Terpadu Nurul Fikri Jakarta Selatan, email resmi (`riezrafaroro@gmail.com`), saluran telepon, jam operasional, dan garansi SLA respon &lt; 24 jam.
+   - **Interactive Consultation Form (Kanan)**: Input Nama Lengkap, Email Bisnis, Kategori Layanan (dropdown), Detail Kebutuhan Proyek (textarea), serta tombol Submit dan Reset.
+   - **Validasi State React**: Pengecekan nama min. 3 huruf, regex email valid, pilihan kategori layanan, dan pesan min. 10 huruf.
+   - **Umpan Balik Simulasi Pengiriman**: Banner konfirmasi sukses berwarna hijau dengan ringkasan pesan terkirim dan timestamp (disimulasikan pada frontend client-side).
 
-4. **Navigasi Single Page Application (SPA)**
-   - Perpindahan halaman instan berbasis state React yang tersinkronisasi dengan URL Hash (`#home`, `#team`, `#contact`).
-
----
-
-## Teknologi yang Digunakan
-- **React**: `^19.2.8`
-- **Vite**: `^8.3.0`
-- **Bootstrap**: `^5.3.8`
-- **Bootstrap Icons**: `^1.13.1`
+4. **Navigasi SPA (Single Page Application)**
+   - Pergantian halaman instan berbasis state React tersinkronisasi dengan URL hash (`#home`, `#team`, `#contact`).
 
 ---
 
-## Cara Menjalankan Project
+## Panduan Menjalankan Project
 
-### 1. Masuk ke direktori tugas
+### 1. Masuk ke folder proyek
 ```bash
 cd "React JS/tugas_1"
 ```
 
-### 2. Instal dependensi
+### 2. Instalasi dependensi
 ```bash
 npm install
 ```
 
-### 3. Jalankan server pengembangan (Dev Server)
+### 3. Menjalankan server pengembangan (Dev Server)
 ```bash
 npm run dev
 ```
-Akses aplikasi melalui browser pada `http://localhost:5173`.
+Buka browser pada `http://localhost:5173`.
 
-### 4. Build untuk produksi
+### 4. Build produksi
 ```bash
 npm run build
 ```
 
-### 5. Menjalankan linter
+### 5. Menjalankan linting kode
 ```bash
 npm run lint
 ```
@@ -74,15 +84,17 @@ npm run lint
 ---
 
 ## Dokumentasi & Bukti Pengerjaan
-- **Laporan PDF Resmi** : [`docs/Laporan_Tugas_React_JS.pdf`](docs/Laporan_Tugas_React_JS.pdf) (atau file [`Laporan_Tugas_React_JS.pdf`](Laporan_Tugas_React_JS.pdf))
-- **Screenshot Desktop Asli**:
+- **Laporan PDF Resmi (5 Halaman A4)**:
+  - [`docs/Laporan_Tugas_React_JS.pdf`](docs/Laporan_Tugas_React_JS.pdf)
+  - Salinan root: [`Laporan_Tugas_React_JS.pdf`](Laporan_Tugas_React_JS.pdf)
+- **Tangkapan Layar Browser Asli**:
   - Home : [`docs/screenshots/home.png`](docs/screenshots/home.png)
   - Team : [`docs/screenshots/team.png`](docs/screenshots/team.png)
   - Contact : [`docs/screenshots/contact.png`](docs/screenshots/contact.png)
 
 ---
 
-## Petunjuk Undangan Mentor (GitHub Collaborator)
+## Petunjuk Undangan Kolaborasi Mentor (GitHub)
 1. Kunjungi repositori GitHub: [https://github.com/rifaro06/MSIB](https://github.com/rifaro06/MSIB).
-2. Masuk ke menu **Settings** > pilih **Collaborators** > klik **Add people**.
-3. Masukkan username GitHub mentor dan kirimkan undangan kolaborasi.
+2. Buka menu **Settings** > pilih **Collaborators** > klik **Add people**.
+3. Ketikkan username GitHub mentor dan kirimkan invitation.

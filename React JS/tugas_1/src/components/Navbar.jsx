@@ -9,38 +9,40 @@ function Navbar({ currentPage, onNavigate }) {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar sticky-top shadow-sm">
+    <nav className="navbar navbar-expand-lg lumina-navbar sticky-top">
       <div className="container">
         <a
-          className="navbar-brand d-flex align-items-center text-primary"
+          className="lumina-brand"
           href="#home"
           onClick={(e) => {
             e.preventDefault()
             handleLinkClick('home')
           }}
         >
-          <i className="bi bi-code-slash fs-3 me-2 text-primary"></i>
-          <span>
-            ReactEdu<span className="text-secondary fw-normal fs-6 ms-1">| Tugas 1</span>
+          <span className="d-inline-flex align-items-center justify-content-center rounded-3 bg-gradient p-2 me-2" style={{ background: 'linear-gradient(135deg, #6366f1, #d946ef)' }}>
+            <i className="bi bi-stars text-white fs-5"></i>
           </span>
+          <span className="fw-extrabold tracking-tight">LUMINA</span>
+          <span className="lumina-brand-badge d-none d-sm-inline-block">STUDIO</span>
         </a>
 
         <button
-          className="navbar-toggler border-0 shadow-none"
+          className="navbar-toggler border-0 shadow-none text-white p-2"
           type="button"
           onClick={() => setIsOpen(!isOpen)}
           aria-controls="navbarNav"
           aria-expanded={isOpen}
           aria-label="Toggle navigation"
+          style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '10px' }}
         >
-          <span className="navbar-toggler-icon"></span>
+          <i className={`bi ${isOpen ? 'bi-x-lg' : 'bi-list'} fs-4 text-white`}></i>
         </button>
 
         <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarNav">
-          <ul className="navbar-nav ms-auto align-items-lg-center gap-1 my-2 my-lg-0">
+          <ul className="navbar-nav ms-auto align-items-lg-center gap-2 my-3 my-lg-0">
             <li className="nav-item">
               <a
-                className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
+                className={`nav-link lumina-nav-link ${currentPage === 'home' ? 'active' : ''}`}
                 href="#home"
                 onClick={(e) => {
                   e.preventDefault()
@@ -52,7 +54,7 @@ function Navbar({ currentPage, onNavigate }) {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link ${currentPage === 'team' ? 'active' : ''}`}
+                className={`nav-link lumina-nav-link ${currentPage === 'team' ? 'active' : ''}`}
                 href="#team"
                 onClick={(e) => {
                   e.preventDefault()
@@ -64,26 +66,27 @@ function Navbar({ currentPage, onNavigate }) {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`}
+                className={`nav-link lumina-nav-link ${currentPage === 'contact' ? 'active' : ''}`}
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault()
                   handleLinkClick('contact')
                 }}
               >
-                <i className="bi bi-envelope me-1"></i> Contact
+                <i className="bi bi-chat-square-dots me-1"></i> Contact
               </a>
             </li>
-            <li className="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <li className="nav-item ms-lg-3 mt-2 mt-lg-0">
               <a
-                className="btn btn-primary btn-sm px-3 rounded-pill d-inline-flex align-items-center shadow-sm"
+                className="btn btn-lumina-primary btn-sm px-4 shadow-sm"
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault()
                   handleLinkClick('contact')
                 }}
               >
-                <i className="bi bi-send me-1"></i> Hubungi Kami
+                <span>Let's Collaborate</span>
+                <i className="bi bi-arrow-right-short fs-5"></i>
               </a>
             </li>
           </ul>

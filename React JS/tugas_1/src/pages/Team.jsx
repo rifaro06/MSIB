@@ -2,75 +2,95 @@ import avatar1 from '../assets/avatar-1.svg'
 import avatar2 from '../assets/avatar-2.svg'
 import avatar3 from '../assets/avatar-3.svg'
 import avatar4 from '../assets/avatar-4.svg'
+import TeamCard from '../components/TeamCard'
 
 function Team({ onNavigate }) {
   const teamMembers = [
     {
       name: 'Riez Rafa Roro',
-      role: 'Lead Frontend Developer',
+      role: 'Founder & Head of Engineering',
       type: 'Mahasiswa (Penanggung Jawab)',
-      typeBadge: 'bg-primary text-white',
+      badgeGradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
       avatar: avatar1,
-      bio: 'Mahasiswa STT Terpadu Nurul Fikri (NIM: 0110224034). Bertanggung jawab atas inisialisasi arsitektur komponen React, routing dasar, dan styling Bootstrap.',
-      skills: ['React JS', 'Bootstrap 5', 'JavaScript ES6+', 'Vite'],
+      bio: 'Mahasiswa STT Terpadu Nurul Fikri (NIM: 0110224034). Bertanggung jawab atas perancangan arsitektur sistem React 19, navigasi modular, dan implementasi UI studio.',
+      skills: ['React 19', 'Vite', 'Bootstrap 5', 'Architecture'],
       github: 'https://github.com/rifaro06',
+      isLeader: true,
     },
     {
-      name: 'Sarah Amalia',
-      role: 'UI/UX Designer',
-      type: 'Data Contoh (Sample Data)',
-      typeBadge: 'bg-light text-secondary border',
+      name: 'Elena Vance',
+      role: 'Principal Art Director & UI/UX',
+      type: 'Studio Co-Lead (Data Contoh)',
+      badgeGradient: 'linear-gradient(135deg, #ec4899, #8b5cf6)',
       avatar: avatar2,
-      bio: 'Fokus pada perancangan wireframe, pemilihan hierarki tipografi, konsistensi warna antarmuka, dan kenyamanan interaksi pengguna (user experience).',
-      skills: ['Figma', 'Design System', 'Wireframing', 'Responsive Design'],
+      bio: 'Memimpin visi estetika Lumina Studio, perancangan design tokens, hierarki tipografi modern, serta sistem glassmorphism bernuansa futuristik.',
+      skills: ['Figma', 'Glassmorphism', 'Design Systems', 'Micro-Motion'],
       github: 'https://github.com',
+      isLeader: false,
     },
     {
-      name: 'Dimas Pratama',
-      role: 'Frontend Specialist',
-      type: 'Data Contoh (Sample Data)',
-      typeBadge: 'bg-light text-secondary border',
+      name: 'Marcus Chen',
+      role: 'Chief Technology Officer',
+      type: 'Studio Co-Lead (Data Contoh)',
+      badgeGradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
       avatar: avatar3,
-      bio: 'Mengembangkan komponen interaktif, penanganan state lokal React, serta optimalisasi integrasi komponen grid dan formulir Bootstrap.',
-      skills: ['React Hooks', 'JSX Syntax', 'Bootstrap Grid', 'HTML5 Validation'],
+      bio: 'Mengoptimalkan pipeline bundling Vite, performa rendering DOM di bawah 50ms, dan penanganan state dinamis berbasis standar enterprise.',
+      skills: ['React Hooks', 'JSX Architecture', 'Performance', 'CI/CD'],
       github: 'https://github.com',
+      isLeader: false,
     },
     {
-      name: 'Nabila Putri',
-      role: 'QA & Technical Writer',
-      type: 'Data Contoh (Sample Data)',
-      typeBadge: 'bg-light text-secondary border',
+      name: 'Nabila Safira',
+      role: 'Head of Product QA & Strategy',
+      type: 'Studio Co-Lead (Data Contoh)',
+      badgeGradient: 'linear-gradient(135deg, #f59e0b, #d97706)',
       avatar: avatar4,
-      bio: 'Memastikan kualitas kode bebas error linting, verifikasi kesesuaian tampilan pada berbagai perangkat, serta penyusunan laporan dokumentasi tugas.',
-      skills: ['Testing UI', 'Documentation', 'Git Workflow', 'PDF Reporting'],
+      bio: 'Menjamin kualitas kode bebas linting error, verifikasi kompatibilitas responsive lintas perangkat, serta penyusunan dokumentasi teknis formal.',
+      skills: ['Quality Assurance', 'Docs System', 'UX Auditing', 'Git Flow'],
       github: 'https://github.com',
+      isLeader: false,
     },
   ]
 
   return (
     <div className="team-page py-5 animate-fade-in">
-      <div className="container py-lg-3">
+      <div className="container py-lg-4">
         {/* Page Header */}
-        <div className="text-center max-w-700 mx-auto mb-5">
-          <div className="d-inline-flex align-items-center gap-2 px-3 py-1 mb-2 rounded-pill bg-primary-subtle text-primary border border-primary-subtle small fw-semibold">
-            <i className="bi bi-people-fill"></i>
-            <span>Meet Our Team</span>
+        <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
+          <div className="hero-pill">
+            <i className="bi bi-people-fill text-info"></i>
+            <span>THE VISIONARIES &bull; LUMINA COLLECTIVE</span>
           </div>
-          <h1 className="display-5 fw-bold text-dark mt-1">Tim Pengembang &amp; Kolaborasi</h1>
-          <p className="lead text-secondary">
-            Mengenal profil peran anggota tim dalam merancang, mengembangkan, dan menguji aplikasi web berbasis React JS.
+          <h1 className="display-5 fw-extrabold text-white mt-1" style={{ letterSpacing: '-0.5px' }}>
+            Para Kreator di Balik <span className="text-gradient">Inovasi Digital</span>
+          </h1>
+          <p className="text-secondary small mt-2" style={{ lineHeight: '1.6' }}>
+            Kolaborasi para pemikir desain, arsitek perangkat lunak frontend, dan spesialis produk digital
+            yang mendedikasikan keahlian mereka untuk melahirkan karya berstandar industri.
           </p>
         </div>
 
-        {/* Informative Note / Disclaimer */}
-        <div className="alert alert-info border-info-subtle shadow-sm rounded-3 mb-5 d-flex align-items-start gap-3">
-          <i className="bi bi-info-circle-fill fs-4 text-info mt-1"></i>
+        {/* Informative Note / Academic Disclaimer */}
+        <div
+          className="p-3 rounded-4 mb-5 d-flex align-items-start gap-3"
+          style={{
+            background: 'rgba(99, 102, 241, 0.08)',
+            border: '1px solid rgba(99, 102, 241, 0.25)',
+            backdropFilter: 'blur(10px)',
+          }}
+        >
+          <div
+            className="rounded-circle d-flex align-items-center justify-content-center p-2 text-primary"
+            style={{ background: 'rgba(99, 102, 241, 0.2)', width: '38px', height: '38px', flexShrink: 0 }}
+          >
+            <i className="bi bi-info-circle-fill fs-5"></i>
+          </div>
           <div>
-            <h6 className="alert-heading fw-bold mb-1">Catatan Data Anggota Tim</h6>
-            <p className="mb-0 small text-body-secondary">
-              Profil pertama diisi oleh identitas mahasiswa penanggung jawab tugas (Riez Rafa Roro).
-              Profil selanjutnya merupakan data percontohan (<em>sample data</em>) yang dirancang untuk
-              mensimulasikan pembagian peran kerja tim pengembang perangkat lunak secara profesional.
+            <h6 className="fw-bold text-white mb-1 small">Transparansi Data Anggota Tim Lumina</h6>
+            <p className="mb-0 small text-secondary" style={{ fontSize: '0.82rem', lineHeight: '1.5' }}>
+              Profil pertama diisi oleh identitas mahasiswa penanggung jawab tugas (<strong>Riez Rafa Roro &bull; 0110224034 &bull; STT Terpadu Nurul Fikri</strong>).
+              Profil berikutnya adalah data percontohan (<em>sample data</em>) yang dirancang untuk mensimulasikan
+              struktur agensi kreatif dan pembagian peran profesional dalam pengembangan produk web.
             </p>
           </div>
         </div>
@@ -79,72 +99,37 @@ function Team({ onNavigate }) {
         <div className="row g-4 justify-content-center">
           {teamMembers.map((member, index) => (
             <div className="col-lg-3 col-md-6" key={index}>
-              <div className="card h-100 team-card shadow-sm border-0 d-flex flex-column">
-                <div className="team-avatar-wrapper text-center position-relative">
-                  <span
-                    className={`position-absolute top-0 end-0 m-3 badge rounded-pill ${member.typeBadge} small`}
-                    style={{ fontSize: '0.7rem' }}
-                  >
-                    {index === 0 ? 'Mahasiswa' : 'Contoh'}
-                  </span>
-                  <img
-                    src={member.avatar}
-                    alt={`Avatar ${member.name}`}
-                    className="team-avatar shadow-sm"
-                  />
-                </div>
-
-                <div className="card-body p-4 text-center d-flex flex-column flex-grow-1">
-                  <h5 className="card-title fw-bold text-dark mb-1">{member.name}</h5>
-                  <div className="text-primary fw-semibold small mb-2">{member.role}</div>
-
-                  <p className="card-text text-secondary small mb-3 flex-grow-1">
-                    {member.bio}
-                  </p>
-
-                  {/* Skills badges */}
-                  <div className="d-flex flex-wrap justify-content-center gap-1 mb-3">
-                    {member.skills.map((skill, sIdx) => (
-                      <span
-                        key={sIdx}
-                        className="badge bg-light text-dark border small"
-                        style={{ fontSize: '0.72rem' }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Action Link */}
-                  <div className="mt-auto pt-2 border-top">
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn btn-outline-primary btn-sm rounded-pill w-100 d-inline-flex align-items-center justify-content-center gap-1"
-                    >
-                      <i className="bi bi-github"></i>
-                      <span>Profil GitHub</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <TeamCard
+                name={member.name}
+                role={member.role}
+                type={member.type}
+                badgeGradient={member.badgeGradient}
+                avatar={member.avatar}
+                bio={member.bio}
+                skills={member.skills}
+                github={member.github}
+                isLeader={member.isLeader}
+              />
             </div>
           ))}
         </div>
 
-        {/* Bottom Contact Section */}
-        <div className="mt-5 text-center p-4 bg-light rounded-4 border">
-          <h5 className="fw-bold mb-2">Punya pertanyaan untuk anggota tim kami?</h5>
+        {/* Bottom Banner */}
+        <div
+          className="mt-5 p-4 rounded-4 text-center glass-panel"
+          style={{ maxWidth: '820px', margin: '0 auto' }}
+        >
+          <h5 className="fw-bold text-white mb-2">Ingin Berdiskusi Langsung dengan Tim Lumina?</h5>
           <p className="text-secondary small mb-3">
-            Jangan ragu untuk mengirimkan pesan atau diskusi melalui formulir pada halaman Contact.
+            Kirimkan brief proyek Anda atau ajukan pertanyaan melalui formulir pada halaman Contact.
           </p>
           <button
             type="button"
-            className="btn btn-primary btn-sm px-4 rounded-pill"
+            className="btn btn-lumina-primary btn-sm px-4"
             onClick={() => onNavigate('contact')}
           >
-            Buka Halaman Contact
+            <span>Buka Formulir Kontak</span>
+            <i className="bi bi-arrow-right"></i>
           </button>
         </div>
       </div>

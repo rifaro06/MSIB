@@ -10,7 +10,7 @@ function Contact() {
 
   const [errors, setErrors] = useState({})
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [submissionHistory, setSubmissionHistory] = useState(null)
+  const [submittedData, setSubmittedData] = useState(null)
 
   const validate = () => {
     const errs = {}
@@ -27,13 +27,13 @@ function Contact() {
     }
 
     if (!formData.subject.trim()) {
-      errs.subject = 'Subjek pesan wajib dipilih atau diisi.'
+      errs.subject = 'Kategori layanan/proyek wajib dipilih.'
     }
 
     if (!formData.message.trim()) {
-      errs.message = 'Isi pesan tidak boleh kosong.'
+      errs.message = 'Detail pesan/kebutuhan proyek tidak boleh kosong.'
     } else if (formData.message.trim().length < 10) {
-      errs.message = 'Pesan minimal berisi 10 karakter agar maksud tersampaikan jelas.'
+      errs.message = 'Pesan minimal berisi 10 karakter agar kebutuhan tersampaikan jelas.'
     }
 
     return errs
@@ -45,7 +45,6 @@ function Contact() {
       ...prev,
       [name]: value,
     }))
-    // Clear error for current field when user types
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -62,13 +61,13 @@ function Contact() {
       return
     }
 
-    // Set success feedback state (Frontend simulation)
     const timestamp = new Date().toLocaleTimeString('id-ID', {
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
     })
-    setSubmissionHistory({
+
+    setSubmittedData({
       ...formData,
       timestamp,
     })
@@ -84,253 +83,292 @@ function Contact() {
       message: '',
     })
     setIsSubmitted(false)
-    setSubmissionHistory(null)
+    setSubmittedData(null)
     setErrors({})
   }
 
   return (
     <div className="contact-page py-5 animate-fade-in">
-      <div className="container py-lg-3">
+      <div className="container py-lg-4">
         {/* Header */}
-        <div className="text-center max-w-700 mx-auto mb-5">
-          <div className="d-inline-flex align-items-center gap-2 px-3 py-1 mb-2 rounded-pill bg-primary-subtle text-primary border border-primary-subtle small fw-semibold">
-            <i className="bi bi-envelope-paper-fill"></i>
-            <span>Contact Us</span>
+        <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
+          <div className="hero-pill">
+            <i className="bi bi-chat-quote-fill text-warning"></i>
+            <span>GET IN TOUCH &bull; START A COLLABORATION</span>
           </div>
-          <h1 className="display-5 fw-bold text-dark mt-1">Hubungi Kami</h1>
-          <p className="lead text-secondary">
-            Kirimkan tanggapan, pertanyaan, atau pesan kolaborasi Anda melalui formulir di bawah ini.
+          <h1 className="display-5 fw-extrabold text-white mt-1" style={{ letterSpacing: '-0.5px' }}>
+            Mari Membangun <span className="text-gradient">Karya Luar Biasa</span>
+          </h1>
+          <p className="text-secondary small mt-2" style={{ lineHeight: '1.6' }}>
+            Diskusikan visi produk digital, arsitektur antarmuka baru, atau ajukan pertanyaan Anda
+            kepada tim Lumina Studio melalui formulir di bawah ini.
           </p>
         </div>
 
         <div className="row g-4 justify-content-center">
-          {/* Left Column: Contact Info Cards */}
+          {/* Left Column: Studio Headquarters */}
           <div className="col-lg-5">
-            <div className="card border-0 shadow-sm rounded-4 p-4 contact-card h-100">
-              <h4 className="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+            <div className="glass-card p-4 p-md-5 h-100 d-flex flex-column">
+              <h4 className="fw-bold text-white mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-geo-alt-fill text-primary"></i>
-                <span>Informasi Kontak</span>
+                <span>Studio Headquarters</span>
               </h4>
               <p className="text-secondary small mb-4">
-                Informasi di bawah ini merupakan data contoh (<em>placeholder</em>) yang disediakan
-                sebagai pelengkap rancangan halaman kontak.
+                Informasi di bawah ini merupakan data representasi studio percontohan (<em>placeholder</em>)
+                yang disiapkan untuk rancangan halaman kontak profesional.
               </p>
 
               <div className="d-flex flex-column gap-3 mb-4">
-                <div className="d-flex align-items-start gap-3 p-3 bg-light rounded-3">
-                  <div className="icon-badge bg-primary text-white rounded-circle p-2 fs-5 mb-0" style={{ width: '42px', height: '42px' }}>
-                    <i className="bi bi-building"></i>
-                  </div>
-                  <div>
-                    <h6 className="fw-bold mb-1 text-dark">Alamat Kampus</h6>
-                    <p className="text-secondary small mb-0">
-                      STT Terpadu Nurul Fikri, Jl. Raya Lenteng Agung No. 20, Jakarta Selatan, DKI Jakarta 12640
-                    </p>
-                  </div>
-                </div>
-
-                <div className="d-flex align-items-start gap-3 p-3 bg-light rounded-3">
-                  <div className="icon-badge bg-success text-white rounded-circle p-2 fs-5 mb-0" style={{ width: '42px', height: '42px' }}>
-                    <i className="bi bi-envelope-at"></i>
-                  </div>
-                  <div>
-                    <h6 className="fw-bold mb-1 text-dark">Email Mahasiswa</h6>
-                    <p className="text-secondary small mb-0">
-                      <a href="mailto:riezrafaroro@gmail.com" className="text-decoration-none text-secondary">
-                        riezrafaroro@gmail.com
-                      </a>
-                    </p>
+                <div className="p-3 rounded-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <div className="d-flex align-items-start gap-3">
+                    <div className="service-icon-box mb-0" style={{ width: '42px', height: '42px', fontSize: '1.2rem', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', flexShrink: 0 }}>
+                      <i className="bi bi-building"></i>
+                    </div>
+                    <div>
+                      <div className="fw-bold text-white small">Studio &amp; Kampus</div>
+                      <div className="text-secondary small mt-1" style={{ fontSize: '0.82rem' }}>
+                        STT Terpadu Nurul Fikri &bull; Lumina Studio Lab, Jl. Raya Lenteng Agung No. 20, Jakarta Selatan 12640
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="d-flex align-items-start gap-3 p-3 bg-light rounded-3">
-                  <div className="icon-badge bg-warning text-dark rounded-circle p-2 fs-5 mb-0" style={{ width: '42px', height: '42px' }}>
-                    <i className="bi bi-telephone-inbound"></i>
-                  </div>
-                  <div>
-                    <h6 className="fw-bold mb-1 text-dark">Nomor Telepon</h6>
-                    <p className="text-secondary small mb-0">+62 812-3456-7890 (Contoh)</p>
+                <div className="p-3 rounded-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <div className="d-flex align-items-start gap-3">
+                    <div className="service-icon-box mb-0" style={{ width: '42px', height: '42px', fontSize: '1.2rem', background: 'linear-gradient(135deg, #06b6d4, #3b82f6)', flexShrink: 0 }}>
+                      <i className="bi bi-envelope-at"></i>
+                    </div>
+                    <div>
+                      <div className="fw-bold text-white small">Email Korespondensi</div>
+                      <div className="text-secondary small mt-1" style={{ fontSize: '0.82rem' }}>
+                        <a href="mailto:riezrafaroro@gmail.com" className="text-decoration-none text-info">
+                          riezrafaroro@gmail.com
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="d-flex align-items-start gap-3 p-3 bg-light rounded-3">
-                  <div className="icon-badge bg-info text-dark rounded-circle p-2 fs-5 mb-0" style={{ width: '42px', height: '42px' }}>
-                    <i className="bi bi-clock-history"></i>
+                <div className="p-3 rounded-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <div className="d-flex align-items-start gap-3">
+                    <div className="service-icon-box mb-0" style={{ width: '42px', height: '42px', fontSize: '1.2rem', background: 'linear-gradient(135deg, #ec4899, #8b5cf6)', flexShrink: 0 }}>
+                      <i className="bi bi-telephone-inbound"></i>
+                    </div>
+                    <div>
+                      <div className="fw-bold text-white small">Saluran Konsultasi</div>
+                      <div className="text-secondary small mt-1" style={{ fontSize: '0.82rem' }}>
+                        +62 812-3456-7890 (Direct Hotline / Sample)
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h6 className="fw-bold mb-1 text-dark">Waktu Operasional</h6>
-                    <p className="text-secondary small mb-0">Senin &ndash; Jumat, 08:00 &ndash; 17:00 WIB</p>
+                </div>
+
+                <div className="p-3 rounded-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <div className="d-flex align-items-start gap-3">
+                    <div className="service-icon-box mb-0" style={{ width: '42px', height: '42px', fontSize: '1.2rem', background: 'linear-gradient(135deg, #10b981, #059669)', flexShrink: 0 }}>
+                      <i className="bi bi-clock-history"></i>
+                    </div>
+                    <div>
+                      <div className="fw-bold text-white small">Jam Operasional Studio</div>
+                      <div className="text-secondary small mt-1" style={{ fontSize: '0.82rem' }}>
+                        Senin &ndash; Jumat, 09:00 &ndash; 18:00 WIB
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="p-3 bg-primary-subtle text-primary border border-primary-subtle rounded-3 small mt-auto">
+              <div
+                className="p-3 rounded-3 mt-auto small"
+                style={{
+                  background: 'rgba(99, 102, 241, 0.1)',
+                  border: '1px solid rgba(99, 102, 241, 0.25)',
+                  color: '#c7d2fe',
+                }}
+              >
                 <i className="bi bi-shield-check me-1 fw-bold"></i>
-                <strong>Catatan Validasi:</strong> Formulir dilengkapi validasi React state untuk
-                memastikan nama, email, subjek, dan panjang pesan valid sebelum dikirim.
+                <strong>SLA Respon:</strong> Tim kami merespons setiap inquiry dalam kurun waktu kurang dari 24 jam kerja.
               </div>
             </div>
           </div>
 
-          {/* Right Column: Interactive Form & Simulated Submission */}
+          {/* Right Column: Consultation Form */}
           <div className="col-lg-7">
-            <div className="card border-0 shadow-sm rounded-4 p-4 contact-card">
-              <h4 className="fw-bold text-dark mb-1">Kirimkan Pesan Anda</h4>
+            <div className="glass-card p-4 p-md-5">
+              <h4 className="fw-bold text-white mb-1" style={{ letterSpacing: '-0.3px' }}>
+                Kirimkan Brief Proyek Anda
+              </h4>
               <p className="text-secondary small mb-4">
-                Lengkapi seluruh kolom formulir di bawah ini dengan benar.
+                Isi rincian kebutuhan Anda di bawah ini untuk memulai sesi konsultasi digital.
               </p>
 
-              {isSubmitted && submissionHistory ? (
+              {isSubmitted && submittedData ? (
                 <div className="animate-fade-in">
-                  <div className="alert alert-success border-success-subtle shadow-sm rounded-3 p-3 mb-4">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <i className="bi bi-check-circle-fill fs-4 text-success"></i>
-                      <h5 className="alert-heading fw-bold mb-0">Pesan Simulasi Berhasil Terkirim!</h5>
+                  <div
+                    className="p-4 rounded-4 mb-4"
+                    style={{
+                      background: 'rgba(16, 185, 129, 0.12)',
+                      border: '1px solid rgba(16, 185, 129, 0.35)',
+                    }}
+                  >
+                    <div className="d-flex align-items-center gap-3 mb-2">
+                      <div className="rounded-circle d-flex align-items-center justify-content-center p-2 text-success" style={{ background: 'rgba(16, 185, 129, 0.2)', width: '44px', height: '44px' }}>
+                        <i className="bi bi-check-circle-fill fs-4"></i>
+                      </div>
+                      <div>
+                        <h5 className="fw-bold text-white mb-0">Inquiry Berhasil Diterima!</h5>
+                        <div className="small text-secondary">Waktu: {submittedData.timestamp}</div>
+                      </div>
                     </div>
-                    <p className="small mb-2 text-dark">
-                      Terima kasih, <strong>{submissionHistory.name}</strong>. Pesan Anda telah berhasil
-                      diproses oleh state aplikasi React pada pukul <strong>{submissionHistory.timestamp}</strong>.
+                    <p className="small text-light mb-2 mt-3" style={{ lineHeight: '1.6' }}>
+                      Terima kasih, <strong>{submittedData.name}</strong>! Pesan Anda mengenai{' '}
+                      <strong>{submittedData.subject}</strong> telah berhasil diproses oleh state komponen React.
                     </p>
-                    <div className="small text-body-secondary border-top pt-2">
+                    <div className="small text-secondary border-top pt-2 mt-2" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
                       <em>Catatan:</em> Karena proyek berfokus pada frontend React tanpa backend server,
-                      pengiriman ini disimulasikan secara aman pada state lokal komponen.
+                      pengiriman ini disimulasikan secara aman dan transparan pada state lokal aplikasi.
                     </div>
                   </div>
 
-                  <div className="card bg-light border p-3 rounded-3 mb-4">
-                    <h6 className="fw-bold text-dark border-bottom pb-2 mb-3">Ringkasan Data Terkirim:</h6>
+                  <div className="p-3 rounded-3 mb-4" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <h6 className="fw-bold text-white border-bottom pb-2 mb-3 small" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+                      Ringkasan Brief yang Dikirim:
+                    </h6>
                     <div className="row g-2 small">
                       <div className="col-sm-4 text-secondary">Nama Pengirim:</div>
-                      <div className="col-sm-8 fw-semibold text-dark">{submissionHistory.name}</div>
-                      <div className="col-sm-4 text-secondary">Email:</div>
-                      <div className="col-sm-8 fw-semibold text-dark">{submissionHistory.email}</div>
-                      <div className="col-sm-4 text-secondary">Subjek:</div>
-                      <div className="col-sm-8 fw-semibold text-dark">{submissionHistory.subject}</div>
-                      <div className="col-sm-4 text-secondary">Isi Pesan:</div>
-                      <div className="col-sm-8 text-dark bg-white p-2 rounded border">{submissionHistory.message}</div>
+                      <div className="col-sm-8 fw-semibold text-white">{submittedData.name}</div>
+                      <div className="col-sm-4 text-secondary">Email Bisnis:</div>
+                      <div className="col-sm-8 fw-semibold text-white">{submittedData.email}</div>
+                      <div className="col-sm-4 text-secondary">Kategori Layanan:</div>
+                      <div className="col-sm-8 fw-semibold text-info">{submittedData.subject}</div>
+                      <div className="col-sm-4 text-secondary">Detail Kebutuhan:</div>
+                      <div className="col-sm-8 text-white p-2 rounded" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                        {submittedData.message}
+                      </div>
                     </div>
                   </div>
 
                   <button
                     type="button"
-                    className="btn btn-outline-primary rounded-pill w-100"
+                    className="btn btn-lumina-glass w-100 justify-content-center"
                     onClick={handleReset}
                   >
                     <i className="bi bi-arrow-clockwise me-1"></i>
-                    Kirim Pesan Lainnya (Reset Form)
+                    <span>Kirim Pesan / Brief Lainnya</span>
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate>
-                  {/* Nama Lengkap */}
+                  {/* Nama */}
                   <div className="mb-3">
-                    <label htmlFor="nameInput" className="form-label fw-semibold small text-dark">
+                    <label htmlFor="nameInput" className="lumina-label">
                       Nama Lengkap <span className="text-danger">*</span>
                     </label>
                     <div className="input-group">
-                      <span className="input-group-text bg-light text-secondary">
-                        <i className="bi bi-person"></i>
+                      <span className="input-group-text lumina-input border-end-0">
+                        <i className="bi bi-person text-secondary"></i>
                       </span>
                       <input
                         type="text"
-                        className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                        className={`form-control lumina-input border-start-0 ${errors.name ? 'is-invalid' : ''}`}
                         id="nameInput"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Masukkan nama lengkap Anda"
+                        placeholder="Contoh: Riez Rafa Roro"
                       />
-                      {errors.name && <div className="invalid-feedback">{errors.name}</div>}
                     </div>
+                    {errors.name && <div className="text-danger small mt-1">{errors.name}</div>}
                   </div>
 
                   {/* Email */}
                   <div className="mb-3">
-                    <label htmlFor="emailInput" className="form-label fw-semibold small text-dark">
-                      Alamat Email <span className="text-danger">*</span>
+                    <label htmlFor="emailInput" className="lumina-label">
+                      Email Bisnis / Pribadi <span className="text-danger">*</span>
                     </label>
                     <div className="input-group">
-                      <span className="input-group-text bg-light text-secondary">
-                        <i className="bi bi-envelope"></i>
+                      <span className="input-group-text lumina-input border-end-0">
+                        <i className="bi bi-envelope text-secondary"></i>
                       </span>
                       <input
                         type="email"
-                        className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                        className={`form-control lumina-input border-start-0 ${errors.email ? 'is-invalid' : ''}`}
                         id="emailInput"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="contoh@gmail.com"
+                        placeholder="name@company.com"
                       />
-                      {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                     </div>
-                    <div className="form-text small">Email digunakan untuk simulasi konfirmasi balasan.</div>
+                    {errors.email && <div className="text-danger small mt-1">{errors.email}</div>}
                   </div>
 
-                  {/* Subjek */}
+                  {/* Kategori Layanan */}
                   <div className="mb-3">
-                    <label htmlFor="subjectSelect" className="form-label fw-semibold small text-dark">
-                      Subjek Pesan <span className="text-danger">*</span>
+                    <label htmlFor="subjectSelect" className="lumina-label">
+                      Kategori Layanan / Kebutuhan <span className="text-danger">*</span>
                     </label>
                     <div className="input-group">
-                      <span className="input-group-text bg-light text-secondary">
-                        <i className="bi bi-chat-quote"></i>
+                      <span className="input-group-text lumina-input border-end-0">
+                        <i className="bi bi-stars text-secondary"></i>
                       </span>
                       <select
-                        className={`form-select ${errors.subject ? 'is-invalid' : ''}`}
+                        className={`form-select lumina-input border-start-0 ${errors.subject ? 'is-invalid' : ''}`}
                         id="subjectSelect"
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
+                        style={{ color: formData.subject ? '#ffffff' : '#64748b' }}
                       >
-                        <option value="">-- Pilih Kategori Subjek --</option>
-                        <option value="Pertanyaan Tugas React JS">Pertanyaan Tugas React JS</option>
-                        <option value="Kolaborasi Proyek Frontend">Kolaborasi Proyek Frontend</option>
-                        <option value="Masukan dan Feedback Website">Masukan dan Feedback Website</option>
-                        <option value="Lainnya">Lainnya</option>
+                        <option value="" style={{ background: '#0f172a', color: '#64748b' }}>-- Pilih Layanan Lumina Studio --</option>
+                        <option value="Modern Web & React Architecture" style={{ background: '#0f172a', color: '#ffffff' }}>Modern Web &amp; React Architecture</option>
+                        <option value="Immersive UI/UX & Glassmorphism Design" style={{ background: '#0f172a', color: '#ffffff' }}>Immersive UI/UX &amp; Glassmorphism Design</option>
+                        <option value="AI Workflows & Cloud Product Engineering" style={{ background: '#0f172a', color: '#ffffff' }}>AI Workflows &amp; Cloud Product Engineering</option>
+                        <option value="Konsultasi Proyek & Kolaborasi Umum" style={{ background: '#0f172a', color: '#ffffff' }}>Konsultasi Proyek &amp; Kolaborasi Umum</option>
                       </select>
-                      {errors.subject && <div className="invalid-feedback">{errors.subject}</div>}
                     </div>
+                    {errors.subject && <div className="text-danger small mt-1">{errors.subject}</div>}
                   </div>
 
                   {/* Pesan */}
                   <div className="mb-4">
-                    <label htmlFor="messageInput" className="form-label fw-semibold small text-dark">
-                      Isi Pesan <span className="text-danger">*</span>
+                    <label htmlFor="messageInput" className="lumina-label">
+                      Detail Kebutuhan Proyek <span className="text-danger">*</span>
                     </label>
                     <textarea
-                      className={`form-control ${errors.message ? 'is-invalid' : ''}`}
+                      className={`form-control lumina-input ${errors.message ? 'is-invalid' : ''}`}
                       id="messageInput"
                       name="message"
                       rows="4"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tuliskan pesan atau pertanyaan Anda di sini (minimal 10 karakter)..."
+                      placeholder="Jelaskan kebutuhan proyek, fitur utama yang diinginkan, atau pertanyaan Anda..."
                     ></textarea>
-                    {errors.message && <div className="invalid-feedback">{errors.message}</div>}
-                    <div className="form-text small">
-                      Jumlah karakter saat ini: {formData.message.length}
+                    {errors.message && <div className="text-danger small mt-1">{errors.message}</div>}
+                    <div className="d-flex justify-content-between small text-secondary mt-1" style={{ fontSize: '0.78rem' }}>
+                      <span>Karakter minimal: 10</span>
+                      <span>Saat ini: {formData.message.length}</span>
                     </div>
                   </div>
 
-                  {/* Tombol Kirim & Reset */}
-                  <div className="d-flex gap-2">
+                  {/* Tombol Kirim & Bersihkan */}
+                  <div className="d-flex gap-3">
                     <button
                       type="submit"
-                      className="btn btn-primary px-4 py-2 rounded-pill shadow-sm d-inline-flex align-items-center gap-2 flex-grow-1 justify-content-center"
+                      className="btn btn-lumina-primary flex-grow-1 justify-content-center"
                     >
                       <i className="bi bi-send-fill"></i>
-                      <span>Kirim Pesan (Simulasi)</span>
+                      <span>Kirim Inquiry (Simulasi)</span>
                     </button>
                     <button
                       type="button"
-                      className="btn btn-outline-secondary px-3 py-2 rounded-pill"
+                      className="btn btn-lumina-glass px-4"
                       onClick={() => {
                         setFormData({ name: '', email: '', subject: '', message: '' })
                         setErrors({})
                       }}
                     >
-                      Bersihkan
+                      Reset
                     </button>
                   </div>
                 </form>
