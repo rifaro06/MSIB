@@ -84,9 +84,9 @@ npm run lint
 ---
 
 ## Dokumentasi & Bukti Pengerjaan
-- **Laporan PDF Resmi (5 Halaman A4)**:
-  - [`docs/Laporan_Tugas_React_JS.pdf`](docs/Laporan_Tugas_React_JS.pdf)
-  - Salinan root: [`Laporan_Tugas_React_JS.pdf`](Laporan_Tugas_React_JS.pdf)
+- **Laporan PDF Resmi (Format Standar Akademik 3 Halaman A4)**:
+  - Berkas PDF Utama: [`TUGAS PERTEMUAN 1.pdf`](TUGAS PERTEMUAN 1.pdf) (dan [`docs/TUGAS PERTEMUAN 1.pdf`](docs/TUGAS PERTEMUAN 1.pdf))
+  - Salinan Alternatif: [`Laporan_Tugas_React_JS.pdf`](Laporan_Tugas_React_JS.pdf)
 - **Tangkapan Layar Browser Asli**:
   - Home : [`docs/screenshots/home.png`](docs/screenshots/home.png)
   - Team : [`docs/screenshots/team.png`](docs/screenshots/team.png)
