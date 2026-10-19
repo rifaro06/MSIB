@@ -13,6 +13,7 @@ Proyek ini disusun untuk memenuhi **Tugas 3** pada mata kuliah **Pemrograman Rea
 - **Program** : Studi Independen Bersertifikat (MSIB)
 - **Mata Kuliah** : Pemrograman React JS
 - **Lokasi Folder Proyek** : `React JS/tugas_3`
+- **Branch Target** : `booksales`
 
 ---
 
@@ -27,8 +28,8 @@ Proyek ini disusun untuk memenuhi **Tugas 3** pada mata kuliah **Pemrograman Rea
 | 5 | Tampilkan data tersebut di halaman Home dan halaman Book | **Selesai 100%** | Ditampilkan di halaman Home ([`src/pages/Home.jsx`](src/pages/Home.jsx)) dan katalog lengkap di halaman Book ([`src/pages/Books.jsx`](src/pages/Books.jsx)). |
 | 6 | Gunakan metode `map` untuk menampilkan data | **Selesai 100%** | Menggunakan `books.map((book) => <BookCard key={book.id} book={book} />)` secara modular dan terstruktur. |
 | 7 | Menambahkan button untuk menambahkan data menggunakan hooks (Nilai Tambah) | **Selesai 100%** | Tombol **"+ Tambah Buku (Hooks)"** membuka modal interaktif ([`src/components/AddBookModal.jsx`](src/components/AddBookModal.jsx)) yang mengelola input via `useState` dan memperbarui state utama secara reaktif. |
-| 8 | Upload kode ke GitHub dan invite username mentor | **Selesai 100%** | Repositori GitHub resmi: [https://github.com/rifaro06/MSIB](https://github.com/rifaro06/MSIB). |
-| 9 | Salin link GitHub untuk diunggah di LMS | **Selesai 100%** | Link tugas: [https://github.com/rifaro06/MSIB/tree/main/React%20JS/tugas_3](https://github.com/rifaro06/MSIB/tree/main/React%20JS/tugas_3). |
+| 8 | Upload kode ke GitHub dan invite username mentor | **Selesai 100%** | Repositori GitHub resmi: [https://github.com/rifaro06/MSIB/tree/booksales](https://github.com/rifaro06/MSIB/tree/booksales). |
+| 9 | Salin link GitHub untuk diunggah di LMS | **Selesai 100%** | Link tugas: [https://github.com/rifaro06/MSIB/tree/booksales/React%20JS/tugas_3](https://github.com/rifaro06/MSIB/tree/booksales/React%20JS/tugas_3). |
 | 10 | Kerjakan dengan sungguh-sungguh & hindari plagiarisme | **Selesai 100%** | Seluruh kode ditulis orisinal, clean, teruji linter 0 error, dan dilengkapi laporan PDF akademik resmi. |
 
 ---
@@ -105,6 +106,7 @@ npm run lint
 
 - **Laporan PDF Resmi (Format Standar Akademik 3 Halaman A4)**:
   - Berkas PDF Utama: [`TUGAS PERTEMUAN 3.pdf`](TUGAS PERTEMUAN 3.pdf) (dan [`docs/TUGAS PERTEMUAN 3.pdf`](docs/TUGAS PERTEMUAN 3.pdf))
+  - Salinan Folder Laporan MSIB: [`../laporan/Laporan_Tugas_3.pdf`](../laporan/Laporan_Tugas_3.pdf)
 - **Tangkapan Layar Browser Asli**:
   - Halaman Home (Rute `/`) : [`docs/screenshots/home.png`](docs/screenshots/home.png)
   - Halaman Book (Rute `/books`) : [`docs/screenshots/books.png`](docs/screenshots/books.png)
@@ -114,12 +116,12 @@ npm run lint
 
 ## Petunjuk Mengundang Mentor (GitHub Collaborator)
 
-1. Buka repositori GitHub: [https://github.com/rifaro06/MSIB](https://github.com/rifaro06/MSIB).
+1. Buka repositori GitHub: [https://github.com/rifaro06/MSIB/tree/booksales](https://github.com/rifaro06/MSIB/tree/booksales).
 2. Klik tab **Settings** di kanan atas repositori.
 3. Pada panel sebelah kiri (Access), pilih **Collaborators**.
 4. Klik tombol hijau **Add people**.
 5. Masukkan username GitHub mentor pembimbing Anda, lalu kirimkan invitation.
 6. Salin tautan berikut untuk kolom pengumpulan LMS:
    ```text
-   https://github.com/rifaro06/MSIB/tree/main/React%20JS/tugas_3
+   https://github.com/rifaro06/MSIB/tree/booksales/React%20JS/tugas_3
    ```

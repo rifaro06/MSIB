@@ -5,47 +5,60 @@ import FeatureCard from '../components/FeatureCard'
 function Home() {
   const capabilities = [
     {
-      icon: 'bi-cpu',
+      icon: 'bi-book-half',
       gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-      tag: 'ARCHITECTURE',
-      title: 'Next-Gen Web Architecture',
+      tag: 'KURASI RESMI',
+      title: 'Buku Teknologi & Coding Terlengkap',
       description:
-        'Membangun aplikasi Single Page Application (SPA) berkinerja tinggi dengan arsitektur deklaratif React Router, modular component tree, dan transisi rute instan tanpa reload.',
+        'Koleksi komprehensif mulai dari dasar pemrograman, JavaScript, React modern, hingga arsitektur cloud dan kecerdasan buatan.',
     },
     {
-      icon: 'bi-gem',
+      icon: 'bi-signpost-split-fill',
       gradient: 'linear-gradient(135deg, #ec4899, #8b5cf6)',
-      tag: 'INTERFACE',
-      title: 'Immersive UI/UX & Glassmorphism',
+      tag: 'REACT ROUTER 7',
+      title: 'Navigasi SPA Declarative Routing',
       description:
-        'Merancang estetika antarmuka modern dengan kedalaman visual, glassmorphism bercahaya, tipografi elegan, dan mikro-interaksi yang memikat sejak pandangan pertama.',
+        'Perpindahan halaman secepat kilat tanpa reload berkat konfigurasi declarative routing dengan RootLayout, Outlet, dan NavLink aktif.',
     },
     {
-      icon: 'bi-stars',
+      icon: 'bi-people-fill',
       gradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
-      tag: 'AI & SCALING',
-      title: 'AI Workflows & Cloud Innovation',
+      tag: 'KOMUNITAS',
+      title: 'Komunitas & Bedah Buku Digital',
       description:
-        'Mengintegrasikan kemampuan kecerdasan buatan, otomatisasi cerdas, dan tooling modern Vite serta Bootstrap untuk menghadirkan skalabilitas produk digital masa depan.',
+        'Dapatkan akses ke sesi diskusi bersama penulis, bedah kode sampel langsung, dan forum pembaca teknologi Book Sales.',
     },
   ]
 
   const metrics = [
-    { value: '120+', label: 'Digital Products Launched', desc: 'Produk Web & Mobile Skala Global' },
-    { value: '99.8%', label: 'Client Satisfaction Rate', desc: 'Ulasan Kepercayaan Mitra Bisnis' },
-    { value: '42ms', label: 'Ultra-Fast Render Time', desc: 'Optimasi Performa React 19 & Vite' },
-    { value: '18+', label: 'Design & Code Awards', desc: 'Pengakuan Standar Industri Digital' },
+    { value: '10.000+', label: 'Buku Terjual', desc: 'Distribusi ke Pembaca Seluruh Indonesia' },
+    { value: '99.8%', label: 'Kepuasan Pelanggan', desc: 'Ulasan Positif dari Mahasiswa & Developer' },
+    { value: '100+', label: 'Judul Best Seller', desc: 'Kurasi Khusus Coding & Desain Modern' },
+    { value: '4.9/5', label: 'Rating Toko Online', desc: 'Layanan Cepat dan Responsif' },
   ]
 
-  const techEcosystem = [
-    'React 19',
-    'React Router 7',
-    'Vite 8',
-    'Bootstrap 5',
-    'JavaScript ES6+',
-    'Glassmorphic UI',
-    'Figma Studio',
-    'Responsive Grid',
+  const sampleBooks = [
+    {
+      title: 'Belajar JavaScript Dasar',
+      author: 'Andi Prasetyo (2021)',
+      price: 'Rp 95.000',
+      tag: 'Best Seller',
+      image: 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      title: 'React untuk Pemula',
+      author: 'Dina Sari (2022)',
+      price: 'Rp 115.000',
+      tag: 'Populer',
+      image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      title: 'Arsitektur Antarmuka UI/UX Modern',
+      author: 'Riez Rafa Roro (2024)',
+      price: 'Rp 135.000',
+      tag: 'Rekomendasi',
+      image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=400&q=80',
+    },
   ]
 
   return (
@@ -56,56 +69,54 @@ function Home() {
           <div className="row align-items-center gy-5">
             <div className="col-lg-7 text-center text-lg-start">
               <div className="hero-pill">
-                <i className="bi bi-stars text-warning"></i>
-                <span>LUMINA CREATIVE &bull; NEXT-GEN DIGITAL STUDIO</span>
+                <i className="bi bi-book text-cyan"></i>
+                <span>BOOKSALES &bull; DECLARATIVE ROUTING</span>
               </div>
 
               <h1 className="hero-heading">
-                We Architect <span className="text-gradient">Digital Futures</span> &amp; Immersive Realities
+                Pusat Belanja &amp; Eksplorasi <span className="text-gradient">Buku Pemrograman</span> Terlengkap
               </h1>
 
               <p className="hero-lead mb-4 pe-lg-3">
-                Lumina Studio adalah studio kreatif dan laboratorium teknologi digital mutakhir.
-                Kami merancang antarmuka web masa depan, routing deklaratif berkinerja tinggi,
-                serta pengalaman visual imersif untuk brand dan kreator visioner.
+                Book Sales menghadirkan arsitektur web modern menggunakan React Router 7.
+                Jelajahi halaman Team dan Contact secara instan tanpa full page reload dengan
+                pengalaman navigasi yang mulus dan responsif.
               </p>
 
-              <div className="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
-                <Link to="/team" className="btn btn-lumina-primary btn-lg">
-                  <i className="bi bi-people-fill"></i>
-                  <span>Meet Our Creators</span>
+              <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+                <Link to="/team" className="btn btn-lumina-primary">
+                  <i className="bi bi-people-fill me-2"></i>
+                  <span>Lihat Tim Pengelola</span>
                 </Link>
-                <Link to="/contact" className="btn btn-lumina-glass btn-lg">
-                  <i className="bi bi-chat-quote-fill"></i>
-                  <span>Start A Project</span>
+                <Link to="/contact" className="btn btn-lumina-secondary">
+                  <i className="bi bi-envelope-fill me-2"></i>
+                  <span>Hubungi Toko Kami</span>
                 </Link>
               </div>
 
-              {/* Quick Tech Badge Bar */}
-              <div className="mt-5 pt-3 border-top" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-                <span
-                  className="small text-secondary text-uppercase fw-semibold me-3 d-block d-sm-inline-block mb-2 mb-sm-0"
-                  style={{ letterSpacing: '1px', fontSize: '0.72rem' }}
-                >
-                  Core Tech Stack:
-                </span>
-                <div className="d-inline-flex flex-wrap gap-2">
-                  {techEcosystem.slice(0, 5).map((tech, idx) => (
-                    <span key={idx} className="skill-pill">
-                      {tech}
-                    </span>
-                  ))}
+              {/* Status / Trust Badges */}
+              <div className="d-flex flex-wrap justify-content-center justify-content-lg-start gap-4 pt-2 text-secondary small">
+                <div className="d-flex align-items-center gap-2">
+                  <i className="bi bi-patch-check-fill text-cyan"></i>
+                  <span>Buku 100% Original</span>
+                </div>
+                <div className="d-flex align-items-center gap-2">
+                  <i className="bi bi-signpost-fill text-cyan"></i>
+                  <span>Declarative Routing v7</span>
+                </div>
+                <div className="d-flex align-items-center gap-2">
+                  <i className="bi bi-lightning-charge-fill text-cyan"></i>
+                  <span>SPA Tanpa Reload</span>
                 </div>
               </div>
             </div>
 
             <div className="col-lg-5 text-center">
-              <div className="p-2 p-md-3 rounded-4 position-relative">
+              <div className="hero-visual-card">
                 <img
                   src={heroIllustration}
-                  alt="Lumina Studio Digital Canvas"
-                  className="img-fluid"
-                  style={{ maxHeight: '420px', width: '100%', objectFit: 'contain' }}
+                  alt="Book Sales Hero Illustration"
+                  className="img-fluid hero-illustration"
                 />
               </div>
             </div>
@@ -113,39 +124,59 @@ function Home() {
         </div>
       </section>
 
-      {/* Core Capabilities Section */}
-      <section className="py-5 position-relative">
-        <div className="container py-lg-4">
-          <div className="text-center mx-auto mb-5" style={{ maxWidth: '680px' }}>
-            <span
-              className="badge rounded-pill px-3 py-2 mb-2"
-              style={{
-                background: 'rgba(99,102,241,0.15)',
-                color: '#a5b4fc',
-                border: '1px solid rgba(99,102,241,0.3)',
-                letterSpacing: '1px',
-                fontSize: '0.75rem',
-              }}
-            >
-              WHAT WE DO &bull; CORE CAPABILITIES
-            </span>
-            <h2 className="display-6 fw-bold text-white mt-2" style={{ letterSpacing: '-0.5px' }}>
-              Dirancang untuk Melampaui <span className="text-gradient-primary">Ekspektasi Modern</span>
-            </h2>
-            <p className="text-secondary small mt-2">
-              Tiga pilar layanan utama yang menggerakkan setiap produk digital yang kami rilis ke pasar global.
-            </p>
+      {/* Featured Book Showcase Section */}
+      <section className="py-5" style={{ background: 'rgba(255,255,255,0.015)' }}>
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="badge category-badge px-3 py-2 mb-2">REKOMENDASI BUKU</span>
+            <h2 className="section-title">Koleksi Buku Pilihan Minggu Ini</h2>
+            <p className="text-secondary small">Buku-buku best seller yang paling banyak dibaca oleh pengembang web dan mahasiswa.</p>
           </div>
 
           <div className="row g-4">
-            {capabilities.map((item, index) => (
-              <div className="col-lg-4 col-md-6" key={index}>
+            {sampleBooks.map((item, idx) => (
+              <div key={idx} className="col-md-4">
+                <div className="card h-100 book-card border-0 p-3">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="rounded-3 w-100 mb-3"
+                    style={{ height: '180px', objectFit: 'cover' }}
+                  />
+                  <span className="badge category-badge align-self-start mb-2">{item.tag}</span>
+                  <h5 className="fw-bold text-white mb-1">{item.title}</h5>
+                  <p className="text-secondary small mb-3">{item.author}</p>
+                  <div className="d-flex justify-content-between align-items-center mt-auto pt-2 border-top border-secondary border-opacity-25">
+                    <span className="fw-bold text-cyan">{item.price}</span>
+                    <Link to="/contact" className="btn btn-sm btn-outline-cyan">
+                      Pesan via Kontak
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Keunggulan Toko (Feature Cards) */}
+      <section className="py-5">
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="badge category-badge px-3 py-2 mb-2">KEUNGGULAN KAMI</span>
+            <h2 className="section-title">Mengapa Memilih Book Sales?</h2>
+            <p className="text-secondary small">Komitmen kami dalam menghadirkan pengalaman literasi teknologi terbaik.</p>
+          </div>
+
+          <div className="row g-4">
+            {capabilities.map((cap, index) => (
+              <div key={index} className="col-md-4">
                 <FeatureCard
-                  icon={item.icon}
-                  gradient={item.gradient}
-                  tag={item.tag}
-                  title={item.title}
-                  description={item.description}
+                  icon={cap.icon}
+                  gradient={cap.gradient}
+                  tag={cap.tag}
+                  title={cap.title}
+                  description={cap.description}
                 />
               </div>
             ))}
@@ -153,27 +184,16 @@ function Home() {
         </div>
       </section>
 
-      {/* Live Metrics / Studio Impact */}
-      <section
-        className="py-5"
-        style={{
-          background: 'rgba(15, 23, 42, 0.4)',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
+      {/* Metrik Toko */}
+      <section className="py-5 border-top border-secondary border-opacity-10">
         <div className="container">
-          <div className="row g-4 text-center">
-            {metrics.map((m, idx) => (
-              <div className="col-6 col-lg-3" key={idx}>
-                <div className="p-4 glass-card h-100">
-                  <div className="display-5 fw-extrabold text-gradient-primary mb-1">
-                    {m.value}
-                  </div>
-                  <div className="text-white fw-semibold small mb-1">{m.label}</div>
-                  <div className="text-secondary small" style={{ fontSize: '0.78rem' }}>
-                    {m.desc}
-                  </div>
+          <div className="row g-4">
+            {metrics.map((m, index) => (
+              <div key={index} className="col-6 col-lg-3 text-center">
+                <div className="p-4 rounded-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <div className="display-6 fw-extrabold text-cyan mb-1">{m.value}</div>
+                  <div className="fw-bold text-white small mb-1">{m.label}</div>
+                  <div className="text-secondary small" style={{ fontSize: '0.75rem' }}>{m.desc}</div>
                 </div>
               </div>
             ))}
@@ -181,47 +201,17 @@ function Home() {
         </div>
       </section>
 
-      {/* Showcase / CTA Banner */}
-      <section className="py-5 my-3">
+      {/* CTA Banner */}
+      <section className="py-5">
         <div className="container">
-          <div
-            className="p-4 p-md-5 rounded-4 text-center text-lg-start position-relative overflow-hidden"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(139, 92, 246, 0.35) 50%, rgba(6, 182, 212, 0.2) 100%)',
-              border: '1px solid rgba(139, 92, 246, 0.4)',
-              backdropFilter: 'blur(20px)',
-            }}
-          >
-            <div className="row align-items-center">
-              <div className="col-lg-8">
-                <span
-                  className="badge rounded-pill px-3 py-1 mb-3"
-                  style={{ background: 'rgba(255,255,255,0.12)', color: '#ffffff', fontSize: '0.75rem' }}
-                >
-                  ✨ READY TO ELEVATE YOUR VISION
-                </span>
-                <h3 className="display-6 fw-bold text-white mb-2" style={{ letterSpacing: '-0.5px' }}>
-                  Siap Membangun Produk Digital Impian Bersama Lumina?
-                </h3>
-                <p className="text-light mb-0 small" style={{ opacity: 0.85, lineHeight: '1.6' }}>
-                  Diskusikan arsitektur aplikasi Anda, eksplorasi profil tim kreator kami, atau kirimkan
-                  pesan konsultasi langsung melalui halaman Contact.
-                </p>
-              </div>
-
-              <div className="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
-                <div className="d-flex flex-wrap justify-content-center justify-content-lg-end gap-3">
-                  <Link to="/contact" className="btn btn-lumina-primary">
-                    <span>Hubungi Studio</span>
-                    <i className="bi bi-arrow-right"></i>
-                  </Link>
-                  <Link to="/team" className="btn btn-lumina-glass">
-                    <span>Kreator Kami</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <div className="p-5 rounded-4 text-center position-relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(6,182,212,0.15))', border: '1px solid rgba(6,182,212,0.3)' }}>
+            <h3 className="fw-bold text-white mb-2">Butuh Bantuan Memilih Buku Terbaik?</h3>
+            <p className="text-secondary small mb-4 mx-auto" style={{ maxWidth: '500px' }}>
+              Tim kurator Book Sales siap membantu memberikan rekomendasi buku sesuai jalur belajar pemrograman Anda.
+            </p>
+            <Link to="/contact" className="btn btn-primary-gradient px-4 py-2">
+              <i className="bi bi-chat-dots me-1"></i> Konsultasi Buku Gratis
+            </Link>
           </div>
         </div>
       </section>

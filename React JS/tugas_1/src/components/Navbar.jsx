@@ -12,18 +12,20 @@ function Navbar({ currentPage, onNavigate }) {
     <nav className="navbar navbar-expand-lg lumina-navbar sticky-top">
       <div className="container">
         <a
-          className="lumina-brand"
+          className="lumina-brand d-flex align-items-center gap-2 text-decoration-none"
           href="#home"
           onClick={(e) => {
             e.preventDefault()
             handleLinkClick('home')
           }}
         >
-          <span className="d-inline-flex align-items-center justify-content-center rounded-3 bg-gradient p-2 me-2" style={{ background: 'linear-gradient(135deg, #6366f1, #d946ef)' }}>
-            <i className="bi bi-stars text-white fs-5"></i>
+          <span className="brand-icon-box">
+            <i className="bi bi-book-half text-white fs-5"></i>
           </span>
-          <span className="fw-extrabold tracking-tight">LUMINA</span>
-          <span className="lumina-brand-badge d-none d-sm-inline-block">STUDIO</span>
+          <div className="d-flex align-items-center gap-2">
+            <span className="fw-extrabold tracking-tight text-white fs-4">BOOK<span className="text-cyan">SALES</span></span>
+            <span className="lumina-brand-badge d-none d-sm-inline-block">BOOKSTORE</span>
+          </div>
         </a>
 
         <button
@@ -76,20 +78,21 @@ function Navbar({ currentPage, onNavigate }) {
                 <i className="bi bi-chat-square-dots me-1"></i> Contact
               </a>
             </li>
-            <li className="nav-item ms-lg-3 mt-2 mt-lg-0">
-              <a
-                className="btn btn-lumina-primary btn-sm px-4 shadow-sm"
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleLinkClick('contact')
-                }}
-              >
-                <span>Let's Collaborate</span>
-                <i className="bi bi-arrow-right-short fs-5"></i>
-              </a>
-            </li>
           </ul>
+
+          <div className="d-flex align-items-center gap-2 ms-lg-3">
+            <a
+              href="#contact"
+              className="btn btn-primary-gradient px-3 py-2 d-inline-flex align-items-center gap-2"
+              onClick={(e) => {
+                e.preventDefault()
+                handleLinkClick('contact')
+              }}
+            >
+              <i className="bi bi-chat-dots-fill"></i>
+              <span>Hubungi Toko</span>
+            </a>
+          </div>
         </div>
       </div>
     </nav>

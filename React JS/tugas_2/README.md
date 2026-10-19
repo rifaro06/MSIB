@@ -1,6 +1,6 @@
-# LUMINA Studio — Tugas 2 Pemrograman React JS (Declarative Routing)
+# Book Sales — Tugas 2 Pemrograman React JS (Declarative Routing)
 
-Aplikasi web modern berstandar agensi digital kreatif yang dibangun menggunakan **React 19**, **Vite 8**, **Bootstrap 5**, dan **React Router 7** dengan implementasi *Declarative Routing* sesuai dokumentasi resmi ([https://reactrouter.com/start/declarative/routing](https://reactrouter.com/start/declarative/routing)).
+Aplikasi web toko buku online modern yang dibangun menggunakan **React 19**, **Vite 8**, **Bootstrap 5**, dan **React Router 7** dengan implementasi *Declarative Routing* sesuai panduan resmi ([https://reactrouter.com/start/declarative/routing](https://reactrouter.com/start/declarative/routing)).
 
 Proyek ini disusun untuk memenuhi **Tugas 2** pada mata kuliah **Pemrograman React JS** (Program Studi Independen Bersertifikat / MSIB 2026).
 
@@ -13,6 +13,7 @@ Proyek ini disusun untuk memenuhi **Tugas 2** pada mata kuliah **Pemrograman Rea
 - **Program** : Studi Independen Bersertifikat (MSIB)
 - **Mata Kuliah** : Pemrograman React JS
 - **Lokasi Folder Proyek** : `React JS/tugas_2`
+- **Branch Target** : `booksales`
 
 ---
 
@@ -23,8 +24,8 @@ Proyek ini disusun untuk memenuhi **Tugas 2** pada mata kuliah **Pemrograman Rea
 | 1 | Menambahkan routing untuk halaman Team dan Contact menggunakan React Router | **Selesai 100%** | Menggunakan `react-router` dan `react-router-dom` v7 di `src/App.jsx` dan `src/main.jsx`. |
 | 2 | Merapikan routing sesuai kategori elemen ([Panduan Declarative Routing](https://reactrouter.com/start/declarative/routing)) | **Selesai 100%** | Membagi rute menjadi Layout Route (`RootLayout`), Index Route (`Home`), Child Routes (`Team`, `Contact`), dan Wildcard 404 Route (`NotFound`). |
 | 3 | Menambahkan styling pada navigasi (Nilai Tambahan / Extra Credit) | **Selesai 100%** | Komponen `<NavLink>` dengan fungsi `({ isActive })` dinamis: efek neon gradient pill, glow box-shadow, dan animated neon underline bar indicator di `src/index.css`. |
-| 4 | Push ke GitHub dan invite mentor | **Selesai 100%** | Repositori: [https://github.com/rifaro06/MSIB](https://github.com/rifaro06/MSIB), panduan invite mentor tercantum di bawah. |
-| 5 | Mencantumkan link GitHub untuk pengumpulan LMS | **Selesai 100%** | Link tugas: [https://github.com/rifaro06/MSIB/tree/main/React%20JS/tugas_2](https://github.com/rifaro06/MSIB/tree/main/React%20JS/tugas_2). |
+| 4 | Push ke GitHub dan invite mentor | **Selesai 100%** | Repositori: [https://github.com/rifaro06/MSIB](https://github.com/rifaro06/MSIB) pada branch `booksales`. |
+| 5 | Mencantumkan link GitHub untuk pengumpulan LMS | **Selesai 100%** | Link tugas: [https://github.com/rifaro06/MSIB/tree/booksales/React%20JS/tugas_2](https://github.com/rifaro06/MSIB/tree/booksales/React%20JS/tugas_2). |
 
 ---
 
@@ -34,7 +35,7 @@ Struktur deklaratif diimplementasikan secara bersih dan terstruktur pada [`src/A
 
 ```jsx
 <Routes>
-  {/* 1. Layout Route: Menyediakan kerangka umum (Navbar, Footer, ScrollToTop) */}
+  {/* 1. Layout Route: Menyediakan kerangka umum toko buku (Navbar, Footer, ScrollToTop) */}
   <Route element={<RootLayout />}>
     {/* 2. Index Route: Halaman utama beranda saat path adalah "/" */}
     <Route index element={<Home />} />
@@ -111,11 +112,11 @@ npm run lint
 
 ## Hasil Pengujian & Dokumen Laporan
 
-- **Hasil Build**: Sukses 100% tanpa error (`built in ~0.66s`, output di folder `dist/`).
+- **Hasil Build**: Sukses 100% tanpa error (`built in ~1.60s`, output di folder `dist/`).
 - **Hasil Lint**: `0 warnings` dan `0 errors`.
-- **Laporan PDF Resmi (Format Standar Akademik 3 Halaman A4)**:
-  - Berkas PDF Utama: [`TUGAS PERTEMUAN 2.pdf`](TUGAS PERTEMUAN 2.pdf) (dan [`docs/TUGAS PERTEMUAN 2.pdf`](docs/TUGAS PERTEMUAN 2.pdf))
-  - Salinan Alternatif: [`Laporan_Tugas_2_React_Router.pdf`](Laporan_Tugas_2_React_Router.pdf)
+- **Laporan PDF Resmi**:
+  - Berkas Utama: [`TUGAS PERTEMUAN 2.pdf`](TUGAS PERTEMUAN 2.pdf)
+  - Salinan Folder Laporan MSIB: [`../laporan/Laporan_Tugas_2.pdf`](../laporan/Laporan_Tugas_2.pdf)
 - **Tangkapan Layar Browser Asli**:
   - Halaman Home (Rute `/`) : [`docs/screenshots/home.png`](docs/screenshots/home.png)
   - Halaman Team (Rute `/team`) : [`docs/screenshots/team.png`](docs/screenshots/team.png)
@@ -125,12 +126,12 @@ npm run lint
 
 ## Petunjuk Mengundang Mentor (GitHub Collaborator)
 
-1. Buka repositori GitHub: [https://github.com/rifaro06/MSIB](https://github.com/rifaro06/MSIB).
+1. Buka repositori GitHub: [https://github.com/rifaro06/MSIB/tree/booksales](https://github.com/rifaro06/MSIB/tree/booksales).
 2. Klik tab **Settings** pada bagian kanan atas repositori.
 3. Pada panel sebelah kiri (Access), pilih **Collaborators**.
 4. Klik tombol hijau **Add people**.
-5. Masukkan username GitHub mentor pembimbing Anda, lalu klik **Add &lt;username&gt; to this repository**.
+5. Masukkan username GitHub mentor pembimbing Anda, lalu klik **Add to this repository**.
 6. Salin tautan proyek berikut untuk diserahkan ke kolom pengumpulan LMS:
    ```
-   https://github.com/rifaro06/MSIB/tree/main/React%20JS/tugas_2
+   https://github.com/rifaro06/MSIB/tree/booksales/React%20JS/tugas_2
    ```

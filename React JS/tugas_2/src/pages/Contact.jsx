@@ -27,13 +27,13 @@ function Contact() {
     }
 
     if (!formData.subject.trim()) {
-      errs.subject = 'Kategori layanan/proyek wajib dipilih.'
+      errs.subject = 'Kategori pertanyaan wajib dipilih.'
     }
 
     if (!formData.message.trim()) {
-      errs.message = 'Detail pesan/kebutuhan proyek tidak boleh kosong.'
+      errs.message = 'Detail pertanyaan atau pesan tidak boleh kosong.'
     } else if (formData.message.trim().length < 10) {
-      errs.message = 'Pesan minimal berisi 10 karakter agar kebutuhan tersampaikan jelas.'
+      errs.message = 'Pesan minimal berisi 10 karakter agar informasi tersampaikan jelas.'
     }
 
     return errs
@@ -58,18 +58,17 @@ function Contact() {
     const validationErrors = validate()
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors)
+      setIsSubmitted(false)
       return
     }
 
-    const timestamp = new Date().toLocaleTimeString('id-ID', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-    })
-
     setSubmittedData({
       ...formData,
-      timestamp,
+      timestamp: new Date().toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      }),
     })
     setIsSubmitted(true)
     setErrors({})
@@ -93,28 +92,28 @@ function Contact() {
         {/* Header */}
         <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
           <div className="hero-pill">
-            <i className="bi bi-chat-quote-fill text-warning"></i>
-            <span>GET IN TOUCH &bull; START A COLLABORATION</span>
+            <i className="bi bi-chat-dots-fill text-cyan"></i>
+            <span>BOOKSALES &bull; DECLARATIVE ROUTING (/contact)</span>
           </div>
           <h1 className="display-5 fw-extrabold text-white mt-1" style={{ letterSpacing: '-0.5px' }}>
-            Mari Membangun <span className="text-gradient">Karya Luar Biasa</span>
+            Hubungi Tim <span className="text-gradient">Book Sales</span>
           </h1>
           <p className="text-secondary small mt-2" style={{ lineHeight: '1.6' }}>
-            Diskusikan visi produk digital, arsitektur antarmuka baru, atau ajukan pertanyaan Anda
-            kepada tim Lumina Studio melalui formulir di bawah ini.
+            Halaman Contact ini terintegrasi sebagai child route deklaratif <code>/contact</code> dengan
+            indikator navigasi aktif dinamis pada navbar.
           </p>
         </div>
 
         <div className="row g-4 justify-content-center">
-          {/* Left Column: Studio Headquarters */}
+          {/* Left Column: Bookstore Headquarters */}
           <div className="col-lg-5">
             <div className="glass-card p-4 p-md-5 h-100 d-flex flex-column">
               <h4 className="fw-bold text-white mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-geo-alt-fill text-primary"></i>
-                <span>Studio Headquarters</span>
+                <span>Toko Pusat Book Sales</span>
               </h4>
               <p className="text-secondary small mb-4">
-                Informasi di bawah ini merupakan data representasi studio percontohan (<em>placeholder</em>)
+                Informasi di bawah ini merupakan data representasi toko buku percontohan (<em>placeholder</em>)
                 yang disiapkan untuk rancangan halaman kontak profesional.
               </p>
 
@@ -122,12 +121,12 @@ function Contact() {
                 <div className="p-3 rounded-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <div className="d-flex align-items-start gap-3">
                     <div className="service-icon-box mb-0" style={{ width: '42px', height: '42px', fontSize: '1.2rem', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', flexShrink: 0 }}>
-                      <i className="bi bi-building"></i>
+                      <i className="bi bi-shop"></i>
                     </div>
                     <div>
-                      <div className="fw-bold text-white small">Studio &amp; Kampus</div>
+                      <div className="fw-bold text-white small">Lokasi Toko &amp; Kampus</div>
                       <div className="text-secondary small mt-1" style={{ fontSize: '0.82rem' }}>
-                        STT Terpadu Nurul Fikri &bull; Lumina Studio Lab, Jl. Raya Lenteng Agung No. 20, Jakarta Selatan 12640
+                        STT Terpadu Nurul Fikri &bull; Book Sales Hub, Jl. Raya Lenteng Agung No. 20, Jakarta Selatan 12640
                       </div>
                     </div>
                   </div>
@@ -139,7 +138,7 @@ function Contact() {
                       <i className="bi bi-envelope-at"></i>
                     </div>
                     <div>
-                      <div className="fw-bold text-white small">Email Korespondensi</div>
+                      <div className="fw-bold text-white small">Email Layanan Pelanggan</div>
                       <div className="text-secondary small mt-1" style={{ fontSize: '0.82rem' }}>
                         <a href="mailto:riezrafaroro@gmail.com" className="text-decoration-none text-info">
                           riezrafaroro@gmail.com
@@ -155,7 +154,7 @@ function Contact() {
                       <i className="bi bi-telephone-inbound"></i>
                     </div>
                     <div>
-                      <div className="fw-bold text-white small">Saluran Konsultasi</div>
+                      <div className="fw-bold text-white small">Saluran Konsultasi Buku</div>
                       <div className="text-secondary small mt-1" style={{ fontSize: '0.82rem' }}>
                         +62 812-3456-7890 (Direct Hotline / Sample)
                       </div>
@@ -169,9 +168,9 @@ function Contact() {
                       <i className="bi bi-clock-history"></i>
                     </div>
                     <div>
-                      <div className="fw-bold text-white small">Jam Operasional Studio</div>
+                      <div className="fw-bold text-white small">Jam Operasional Toko</div>
                       <div className="text-secondary small mt-1" style={{ fontSize: '0.82rem' }}>
-                        Senin &ndash; Jumat, 09:00 &ndash; 18:00 WIB
+                        Senin &ndash; Sabtu, 08:00 &ndash; 20:00 WIB
                       </div>
                     </div>
                   </div>
@@ -187,19 +186,19 @@ function Contact() {
                 }}
               >
                 <i className="bi bi-shield-check me-1 fw-bold"></i>
-                <strong>SLA Respon:</strong> Tim kami merespons setiap inquiry dalam kurun waktu kurang dari 24 jam kerja.
+                <strong>SLA Respon Cepat:</strong> Tim kurator Book Sales merespons setiap pertanyaan dalam waktu kurang dari 24 jam kerja.
               </div>
             </div>
           </div>
 
-          {/* Right Column: Consultation Form */}
+          {/* Right Column: Book Inquiry Form */}
           <div className="col-lg-7">
             <div className="glass-card p-4 p-md-5">
               <h4 className="fw-bold text-white mb-1" style={{ letterSpacing: '-0.3px' }}>
-                Kirimkan Brief Proyek Anda
+                Kirimkan Pertanyaan atau Pesanan
               </h4>
               <p className="text-secondary small mb-4">
-                Isi rincian kebutuhan Anda di bawah ini untuk memulai sesi konsultasi digital.
+                Isi formulir berikut untuk menanyakan rekomendasi atau ketersediaan buku impian Anda.
               </p>
 
               {isSubmitted && submittedData ? (
@@ -216,7 +215,7 @@ function Contact() {
                         <i className="bi bi-check-circle-fill fs-4"></i>
                       </div>
                       <div>
-                        <h5 className="fw-bold text-white mb-0">Inquiry Berhasil Diterima!</h5>
+                        <h5 className="fw-bold text-white mb-0">Pertanyaan Berhasil Dikirim!</h5>
                         <div className="small text-secondary">Waktu: {submittedData.timestamp}</div>
                       </div>
                     </div>
@@ -232,16 +231,16 @@ function Contact() {
 
                   <div className="p-3 rounded-3 mb-4" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <h6 className="fw-bold text-white border-bottom pb-2 mb-3 small" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-                      Ringkasan Brief yang Dikirim:
+                      Ringkasan Pesan yang Dikirim:
                     </h6>
                     <div className="row g-2 small">
                       <div className="col-sm-4 text-secondary">Nama Pengirim:</div>
                       <div className="col-sm-8 fw-semibold text-white">{submittedData.name}</div>
-                      <div className="col-sm-4 text-secondary">Email Bisnis:</div>
+                      <div className="col-sm-4 text-secondary">Email:</div>
                       <div className="col-sm-8 fw-semibold text-white">{submittedData.email}</div>
-                      <div className="col-sm-4 text-secondary">Kategori Layanan:</div>
+                      <div className="col-sm-4 text-secondary">Kategori Pertanyaan:</div>
                       <div className="col-sm-8 fw-semibold text-info">{submittedData.subject}</div>
-                      <div className="col-sm-4 text-secondary">Detail Kebutuhan:</div>
+                      <div className="col-sm-4 text-secondary">Detail Pesan:</div>
                       <div className="col-sm-8 text-white p-2 rounded" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)' }}>
                         {submittedData.message}
                       </div>
@@ -250,126 +249,106 @@ function Contact() {
 
                   <button
                     type="button"
-                    className="btn btn-lumina-glass w-100 justify-content-center"
+                    className="btn btn-outline-secondary text-white btn-sm"
                     onClick={handleReset}
                   >
-                    <i className="bi bi-arrow-clockwise me-1"></i>
-                    <span>Kirim Pesan / Brief Lainnya</span>
+                    <i className="bi bi-arrow-clockwise me-1"></i> Kirim Pesan Baru
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate>
-                  {/* Nama */}
-                  <div className="mb-3">
-                    <label htmlFor="nameInput" className="lumina-label">
-                      Nama Lengkap <span className="text-danger">*</span>
-                    </label>
-                    <div className="input-group">
-                      <span className="input-group-text lumina-input border-end-0">
-                        <i className="bi bi-person text-secondary"></i>
-                      </span>
-                      <input
-                        type="text"
-                        className={`form-control lumina-input border-start-0 ${errors.name ? 'is-invalid' : ''}`}
-                        id="nameInput"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Contoh: Riez Rafa Roro"
-                      />
+                  <div className="row g-3">
+                    <div className="col-md-6">
+                      <label htmlFor="name" className="form-label text-white small fw-semibold">
+                        Nama Lengkap <span className="text-danger">*</span>
+                      </label>
+                      <div className="input-group">
+                        <span className="input-group-text bg-dark border-secondary border-opacity-25 text-secondary">
+                          <i className="bi bi-person"></i>
+                        </span>
+                        <input
+                          type="text"
+                          className={`form-control lumina-input ${errors.name ? 'is-invalid' : ''}`}
+                          id="name"
+                          name="name"
+                          placeholder="Contoh: Riez Rafa Roro"
+                          value={formData.name}
+                          onChange={handleChange}
+                        />
+                      </div>
+                      {errors.name && <div className="text-danger small mt-1">{errors.name}</div>}
                     </div>
-                    {errors.name && <div className="text-danger small mt-1">{errors.name}</div>}
-                  </div>
 
-                  {/* Email */}
-                  <div className="mb-3">
-                    <label htmlFor="emailInput" className="lumina-label">
-                      Email Bisnis / Pribadi <span className="text-danger">*</span>
-                    </label>
-                    <div className="input-group">
-                      <span className="input-group-text lumina-input border-end-0">
-                        <i className="bi bi-envelope text-secondary"></i>
-                      </span>
-                      <input
-                        type="email"
-                        className={`form-control lumina-input border-start-0 ${errors.email ? 'is-invalid' : ''}`}
-                        id="emailInput"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="name@company.com"
-                      />
+                    <div className="col-md-6">
+                      <label htmlFor="email" className="form-label text-white small fw-semibold">
+                        Email Aktif <span className="text-danger">*</span>
+                      </label>
+                      <div className="input-group">
+                        <span className="input-group-text bg-dark border-secondary border-opacity-25 text-secondary">
+                          <i className="bi bi-envelope"></i>
+                        </span>
+                        <input
+                          type="email"
+                          className={`form-control lumina-input ${errors.email ? 'is-invalid' : ''}`}
+                          id="email"
+                          name="email"
+                          placeholder="name@company.com"
+                          value={formData.email}
+                          onChange={handleChange}
+                        />
+                      </div>
+                      {errors.email && <div className="text-danger small mt-1">{errors.email}</div>}
                     </div>
-                    {errors.email && <div className="text-danger small mt-1">{errors.email}</div>}
-                  </div>
 
-                  {/* Kategori Layanan */}
-                  <div className="mb-3">
-                    <label htmlFor="subjectSelect" className="lumina-label">
-                      Kategori Layanan / Kebutuhan <span className="text-danger">*</span>
-                    </label>
-                    <div className="input-group">
-                      <span className="input-group-text lumina-input border-end-0">
-                        <i className="bi bi-stars text-secondary"></i>
-                      </span>
+                    <div className="col-12">
+                      <label htmlFor="subject" className="form-label text-white small fw-semibold">
+                        Kategori Pertanyaan <span className="text-danger">*</span>
+                      </label>
                       <select
-                        className={`form-select lumina-input border-start-0 ${errors.subject ? 'is-invalid' : ''}`}
-                        id="subjectSelect"
+                        className={`form-select lumina-input ${errors.subject ? 'is-invalid' : ''}`}
+                        id="subject"
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        style={{ color: formData.subject ? '#ffffff' : '#64748b' }}
                       >
-                        <option value="" style={{ background: '#0f172a', color: '#64748b' }}>-- Pilih Layanan Lumina Studio --</option>
-                        <option value="Modern Web & React Architecture" style={{ background: '#0f172a', color: '#ffffff' }}>Modern Web &amp; React Architecture</option>
-                        <option value="Immersive UI/UX & Glassmorphism Design" style={{ background: '#0f172a', color: '#ffffff' }}>Immersive UI/UX &amp; Glassmorphism Design</option>
-                        <option value="AI Workflows & Cloud Product Engineering" style={{ background: '#0f172a', color: '#ffffff' }}>AI Workflows &amp; Cloud Product Engineering</option>
-                        <option value="Konsultasi Proyek & Kolaborasi Umum" style={{ background: '#0f172a', color: '#ffffff' }}>Konsultasi Proyek &amp; Kolaborasi Umum</option>
+                        <option value="">-- Pilih Topik Pertanyaan Book Sales --</option>
+                        <option value="Pemesanan Buku / Order">Pemesanan Buku / Order</option>
+                        <option value="Ketersediaan Stok Judul Tertentu">Ketersediaan Stok Judul Tertentu</option>
+                        <option value="Rekomendasi Buku Coding & Framework">Rekomendasi Buku Coding &amp; Framework</option>
+                        <option value="Pengadaan Buku Komunitas / Kampus">Pengadaan Buku Komunitas / Kampus</option>
+                        <option value="Kerjasama Publikasi Penulis">Kerjasama Publikasi Penulis</option>
                       </select>
+                      {errors.subject && <div className="text-danger small mt-1">{errors.subject}</div>}
                     </div>
-                    {errors.subject && <div className="text-danger small mt-1">{errors.subject}</div>}
-                  </div>
 
-                  {/* Pesan */}
-                  <div className="mb-4">
-                    <label htmlFor="messageInput" className="lumina-label">
-                      Detail Kebutuhan Proyek <span className="text-danger">*</span>
-                    </label>
-                    <textarea
-                      className={`form-control lumina-input ${errors.message ? 'is-invalid' : ''}`}
-                      id="messageInput"
-                      name="message"
-                      rows="4"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Jelaskan kebutuhan proyek, fitur utama yang diinginkan, atau pertanyaan Anda..."
-                    ></textarea>
-                    {errors.message && <div className="text-danger small mt-1">{errors.message}</div>}
-                    <div className="d-flex justify-content-between small text-secondary mt-1" style={{ fontSize: '0.78rem' }}>
-                      <span>Karakter minimal: 10</span>
-                      <span>Saat ini: {formData.message.length}</span>
+                    <div className="col-12">
+                      <label htmlFor="message" className="form-label text-white small fw-semibold">
+                        Detail Pesan <span className="text-danger">*</span>
+                      </label>
+                      <textarea
+                        className={`form-control lumina-input ${errors.message ? 'is-invalid' : ''}`}
+                        id="message"
+                        name="message"
+                        rows="4"
+                        placeholder="Tuliskan judul buku yang Anda cari atau pertanyaan yang ingin disampaikan..."
+                        value={formData.message}
+                        onChange={handleChange}
+                      ></textarea>
+                      {errors.message && <div className="text-danger small mt-1">{errors.message}</div>}
                     </div>
-                  </div>
 
-                  {/* Tombol Kirim & Bersihkan */}
-                  <div className="d-flex gap-3">
-                    <button
-                      type="submit"
-                      className="btn btn-lumina-primary flex-grow-1 justify-content-center"
-                    >
-                      <i className="bi bi-send-fill"></i>
-                      <span>Kirim Inquiry (Simulasi)</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-lumina-glass px-4"
-                      onClick={() => {
-                        setFormData({ name: '', email: '', subject: '', message: '' })
-                        setErrors({})
-                      }}
-                    >
-                      Reset
-                    </button>
+                    <div className="col-12 d-flex flex-wrap gap-2 pt-2">
+                      <button type="submit" className="btn btn-lumina-primary px-4 py-2">
+                        <i className="bi bi-send-fill me-2"></i> Kirim Pesan
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-outline-secondary text-white px-3 py-2"
+                        onClick={handleReset}
+                      >
+                        Reset Form
+                      </button>
+                    </div>
                   </div>
                 </form>
               )}

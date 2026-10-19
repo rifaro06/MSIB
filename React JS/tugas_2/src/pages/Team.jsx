@@ -9,45 +9,45 @@ function Team() {
   const teamMembers = [
     {
       name: 'Riez Rafa Roro',
-      role: 'Founder & Head of Engineering',
+      role: 'Founder & Head of Book Sales',
       type: 'Mahasiswa (Penanggung Jawab)',
       badgeGradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
       avatar: avatar1,
-      bio: 'Mahasiswa STT Terpadu Nurul Fikri (NIM: 0110224034). Bertanggung jawab atas perancangan arsitektur sistem React 19, declarative routing React Router, dan implementasi UI studio.',
-      skills: ['React 19', 'React Router 7', 'Vite', 'Architecture'],
+      bio: 'Mahasiswa STT Terpadu Nurul Fikri (NIM: 0110224034). Bertanggung jawab atas perancangan arsitektur Declarative Routing React Router 7, navigasi modular, dan katalog buku Book Sales.',
+      skills: ['React 19', 'React Router 7', 'Declarative Routing', 'Bootstrap 5'],
       github: 'https://github.com/rifaro06',
       isLeader: true,
     },
     {
       name: 'Elena Vance',
-      role: 'Principal Art Director & UI/UX',
-      type: 'Studio Co-Lead (Data Contoh)',
+      role: 'Head of Editorial & Book Cover Design',
+      type: 'Tim Kurasi (Data Contoh)',
       badgeGradient: 'linear-gradient(135deg, #ec4899, #8b5cf6)',
       avatar: avatar2,
-      bio: 'Memimpin visi estetika Lumina Studio, perancangan design tokens, hierarki tipografi modern, serta sistem glassmorphism bernuansa futuristik.',
-      skills: ['Figma', 'Glassmorphism', 'Design Systems', 'Micro-Motion'],
+      bio: 'Memimpin kurasi visual sampul buku, review kualitas tata letak, dan standar estetika katalog buku teknologi Book Sales.',
+      skills: ['Editorial', 'Cover Design', 'Design Systems', 'Typography'],
       github: 'https://github.com',
       isLeader: false,
     },
     {
       name: 'Marcus Chen',
-      role: 'Chief Technology Officer',
-      type: 'Studio Co-Lead (Data Contoh)',
+      role: 'Chief Technology & Inventory Officer',
+      type: 'Tim Logistik (Data Contoh)',
       badgeGradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
       avatar: avatar3,
-      bio: 'Mengoptimalkan pipeline bundling Vite, performa rendering DOM di bawah 50ms, dan penanganan routing dinamis berbasis standar enterprise.',
-      skills: ['React Hooks', 'Declarative Routing', 'Performance', 'CI/CD'],
+      bio: 'Mengoptimalkan performa rendering rute halaman katalog buku, integrasi routing SPA, dan sistem pemantauan ketersediaan buku.',
+      skills: ['React Router', 'Inventory System', 'Performance', 'CI/CD'],
       github: 'https://github.com',
       isLeader: false,
     },
     {
       name: 'Nabila Safira',
-      role: 'Head of Product QA & Strategy',
-      type: 'Studio Co-Lead (Data Contoh)',
+      role: 'Head of Customer Care & Community',
+      type: 'Tim Komunitas (Data Contoh)',
       badgeGradient: 'linear-gradient(135deg, #f59e0b, #d97706)',
       avatar: avatar4,
-      bio: 'Menjamin kualitas kode bebas linting error, verifikasi kompatibilitas responsive lintas perangkat, serta penyusunan dokumentasi teknis formal.',
-      skills: ['Quality Assurance', 'Docs System', 'UX Auditing', 'Git Flow'],
+      bio: 'Mengelola hubungan pembaca, program bedah buku pemrograman, dan penanganan pertanyaan seputar pemesanan buku.',
+      skills: ['Customer Care', 'Community', 'Quality Assurance', 'Git Flow'],
       github: 'https://github.com',
       isLeader: false,
     },
@@ -59,77 +59,52 @@ function Team() {
         {/* Page Header */}
         <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
           <div className="hero-pill">
-            <i className="bi bi-people-fill text-info"></i>
-            <span>THE VISIONARIES &bull; LUMINA COLLECTIVE</span>
+            <i className="bi bi-people-fill text-cyan"></i>
+            <span>BOOKSALES &bull; MANAGEMENT &amp; CURATION TEAM</span>
           </div>
-          <h1 className="display-5 fw-extrabold text-white mt-1" style={{ letterSpacing: '-0.5px' }}>
-            Para Kreator di Balik <span className="text-gradient">Inovasi Digital</span>
+          <h1 className="hero-heading">
+            Tim di Balik <span className="text-gradient">Book Sales</span>
           </h1>
-          <p className="text-secondary small mt-2" style={{ lineHeight: '1.6' }}>
-            Kolaborasi para pemikir desain, arsitek perangkat lunak frontend, dan spesialis produk digital
-            yang mendedikasikan keahlian mereka untuk melahirkan karya berstandar industri.
+          <p className="hero-lead">
+            Halaman Team ini diakses secara mulus melalui rute deklaratif <code>/team</code> pada React Router 7
+            tanpa melakukan refresh halaman browser.
           </p>
         </div>
 
-        {/* Informative Note / Academic Disclaimer */}
-        <div
-          className="p-3 rounded-4 mb-5 d-flex align-items-start gap-3"
-          style={{
-            background: 'rgba(99, 102, 241, 0.08)',
-            border: '1px solid rgba(99, 102, 241, 0.25)',
-            backdropFilter: 'blur(10px)',
-          }}
-        >
-          <div
-            className="rounded-circle d-flex align-items-center justify-content-center p-2 text-primary"
-            style={{ background: 'rgba(99, 102, 241, 0.2)', width: '38px', height: '38px', flexShrink: 0 }}
-          >
-            <i className="bi bi-info-circle-fill fs-5"></i>
-          </div>
-          <div>
-            <h6 className="fw-bold text-white mb-1 small">Transparansi Data Anggota Tim Lumina</h6>
-            <p className="mb-0 small text-secondary" style={{ fontSize: '0.82rem', lineHeight: '1.5' }}>
-              Profil pertama diisi oleh identitas mahasiswa penanggung jawab tugas (<strong>Riez Rafa Roro &bull; 0110224034 &bull; STT Terpadu Nurul Fikri</strong>).
-              Profil berikutnya adalah data percontohan (<em>sample data</em>) yang dirancang untuk mensimulasikan
-              struktur agensi kreatif dan pembagian peran profesional dalam pengembangan produk web.
-            </p>
+        {/* Academic Transparency Alert */}
+        <div className="alert custom-info-alert mb-5 p-3 rounded-3" role="alert">
+          <div className="d-flex align-items-center gap-3">
+            <i className="bi bi-info-circle-fill text-cyan fs-4 flex-shrink-0"></i>
+            <div className="small">
+              <strong>Transparansi Data Anggota Tim Book Sales:</strong>
+              <div className="text-secondary mt-1">
+                Profil pertama di bawah adalah mahasiswa penanggung jawab tugas (<strong>Riez Rafa Roro &bull; 0110224034 &bull; STT Terpadu Nurul Fikri</strong>).
+                Profil tim lainnya adalah data percontohan (sample data) yang dirancang untuk mensimulasikan manajemen toko buku online profesional.
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Team Cards Grid */}
-        <div className="row g-4 justify-content-center">
+        {/* Team Grid */}
+        <div className="row g-4 mb-5">
           {teamMembers.map((member, index) => (
-            <div className="col-lg-3 col-md-6" key={index}>
-              <TeamCard
-                name={member.name}
-                role={member.role}
-                type={member.type}
-                badgeGradient={member.badgeGradient}
-                avatar={member.avatar}
-                bio={member.bio}
-                skills={member.skills}
-                github={member.github}
-                isLeader={member.isLeader}
-              />
+            <div key={index} className="col-lg-3 col-md-6">
+              <TeamCard member={member} />
             </div>
           ))}
         </div>
 
-        {/* Bottom Banner */}
-        <div
-          className="mt-5 p-4 rounded-4 text-center glass-panel"
-          style={{ maxWidth: '820px', margin: '0 auto' }}
-        >
-          <h5 className="fw-bold text-white mb-2">Ingin Berdiskusi Langsung dengan Tim Lumina?</h5>
+        {/* CTA to Contact via React Router Link */}
+        <div className="text-center p-4 rounded-3" style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.06)' }}>
+          <h4 className="fw-bold text-white mb-2">Ingin Menerbitkan atau Merekomendasikan Buku?</h4>
           <p className="text-secondary small mb-3">
-            Kirimkan brief proyek Anda atau ajukan pertanyaan melalui formulir pada halaman Contact.
+            Hubungi tim kurator Book Sales untuk kolaborasi publikasi atau permintaan pengadaan buku khusus.
           </p>
           <Link
             to="/contact"
-            className="btn btn-lumina-primary btn-sm px-4"
+            className="btn btn-outline-cyan px-4 py-2"
           >
-            <span>Buka Formulir Kontak</span>
-            <i className="bi bi-arrow-right"></i>
+            <i className="bi bi-envelope me-1"></i> Buka Formulir Kontak (/contact)
           </Link>
         </div>
       </div>
